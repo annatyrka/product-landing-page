@@ -23,7 +23,7 @@ body {
 
 /* header */
 img[id="header-img"] {
-  height: 120px;
+  height: 110px;
   width: auto;
   }
 
@@ -43,7 +43,6 @@ header {
   top:0;
   z-index: 1;
   display: flex;
-  min-height: 6vw;
   align-items: center;
   background-color: white;
   font-size: 1.25rem;
@@ -66,7 +65,7 @@ nav > ul {
 /* content */
 .container {
   position: relative;
-  top: 120px;
+  top: 110px;
   width: 100%;
 }
 
@@ -154,10 +153,7 @@ h4 {
   line-height: 25px;
   max-width: min-content;
 }
-.plant p {
-  text-align: justify;
-  padding:0 .75rem;
-}
+c
 
 #plants a, #pots a{
   display: inline-block;
@@ -275,7 +271,6 @@ vertical-align: middle;
   background-image: url("./images/thomas-verbruggen-5A06OWU6Wuc-unsplash copy.jpg");
   height: 100vh;
   background-size: cover;
-
 }
 .submit-form {
   display: flex;
@@ -365,60 +360,101 @@ footer > ul {
 
 @media only screen and (max-device-width : 576px) {
 
-/*media navbar */
-nav > ul {
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+h1 {
+  font-size: 4.25rem;
 }
-nav li {
-  padding: 0.15rem;
+
+h2 {
+  font-size: 3.25rem;
+  margin: 2.5rem;
 }
+h3 {
+  font-size: 1.75rem;
+
+}
+
+header {
+  height: 10rem;
+  font-size: 2rem;
+  padding: 1rem;
+}
+
 
 /* main page */
 
-h1 {
-  font-size: 2.75rem;
-}
 
 #main-page {
   display: flex;
   align-items: center;
-  height: 100vh;
+  height: 80vh;
   flex-direction: column;
-
 }
 
 .box-one {
   position: absolute;
-  top: 60vh;
+  top: 45vh;
   padding: 1,75rem;
   margin: 0;
-}
+  width: max-content;
+  text-align: center;
 
+}
 .link-box {
+  font-size:1.75rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
+.shop-button {
+  margin: 1.25rem;
+  font-size: 2.25rem;
+  line-height: 3.75rem;
+  width:100%;
 
+}
 .box-two {
   position: absolute;
   top: 0px;
   width: 100%;
-  height: 50vh;
-  margin: auto;
+  height: 40vh;
   
 }
 .grid-container, .grid-pots{
 flex-direction: column;
 align-items: center;
 justify-content: center;
+max-width: 100%;
 }
+
+.plant, .pots {
+  max-width: 30rem;
+  font-size: 1.25rem;
+}
+  .plant img, .pots img {
+    height: 100%;
+    max-height: 27.5rem;
+    width: auto;
+    padding: 1rem;
+  }
+.btn img {
+    display: inline-block;
+    height: 22.5px;
+    padding: 0.2rem 0.5rem 0 0;
+  }
+  .plant p {
+    text-align: justify;
+    padding: 0.25em 1.75rem;
+  }
+  #newsletter {
+    height: 45vh;
+    background-size: cover;
+  }
+
 .why-us-container{
   flex-direction: column;
   margin: 1rem;
+  font-size: 1rem;
 }
   footer > ul {
     justify-content: space-around;
