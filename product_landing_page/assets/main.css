@@ -30,6 +30,8 @@ img[id="header-img"] {
 
 li {
   list-style: none;
+  padding: 0.75rem;
+  white-space: nowrap;
 }
 
 a {
@@ -44,7 +46,7 @@ header {
   min-height: 6vw;
   align-items: center;
   background-color: white;
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   width: 100%;
 }
 
@@ -56,15 +58,11 @@ nav > ul {
   display: flex;
   justify-content: space-around;
   flex-direction: row;
-  padding: 2vw;
-  width: 30vw;
+  padding: 1rem;
+  width: 25vw;
 }
 
-@media (max-width: 650px) {
-  nav > ul {
-    flex-direction: column;
-  }
-}
+
 /* content */
 
 .container {
@@ -137,19 +135,6 @@ h4 {
 .box-two {
   width: 50%;
   height: 100%;
-}
-
-@media (max-width: 876px) {
-  #main-page {
-    flex-direction: column;
-  }
-  .box-one {
-    width: 100%;
-  }
-
-  .box-two {
-    width: 100%;
-  }
 }
 
 
@@ -379,10 +364,60 @@ footer > ul {
 
 }
 
-@media (max-width: 650px) {
+@media (max-width: 576px) {
+/*media navbar */
+nav > ul {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+nav li {
+  padding: 0.15rem;
+}
+
+/* main page */
+
+h1 {
+  font-size: 2.75rem;
+  margin-bottom: 1.75rem;
+}
+
+#main-page {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.box-one {
+  position: absolute;
+  top: 50vh;
+  padding: 1,75rem;
+  margin: 1.25rem;
+}
+
+.link-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.box-two {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 50vh;
+}
+
+.why-us-container{
+  flex-direction: column;
+  margin: 1rem;
+}
   footer > ul {
     justify-content: space-around;
     align-items: center;
   }
 }
+
 
