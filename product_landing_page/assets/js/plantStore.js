@@ -31,7 +31,7 @@ function stopColor() {
 
 // toggle main img
 
-let myVar2 = setInterval(changeImg, 1500);
+let myVar2 = setInterval(changeImg, 1250);
 let myImage = document.getElementById("main_img");
 
 function changeImg() {
