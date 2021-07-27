@@ -4,9 +4,9 @@
 		<title>Plant store</title>
 		<meta charset="utf-8" />
 		<link rel="stylesheet" href="./assets/main.css" type="text/css"/>
-
 	</head>
     <body>
+    <div class="wrapper">
 
   <header id="header">
     <div class="logo">
@@ -45,7 +45,7 @@
 
 
           <h3>Monstera Deliciosa</h3>
-          <p>Monstera Deliciosa is a favourite for most plant-parents. It also is a great starter house plant for the beginner.</p>
+          <p>Monstera Deliciosa is a favourite for most plant-parents. It is also a great starter house plant for the beginner.</p>
           <button class="btn"><img src="./assets/images/icons8-bag-48.png">add</button>
 
         </div>
@@ -103,12 +103,15 @@
       </div>
          <a href="./shop_plants/shop_plants.html">All pots</a>
   </section>
-
+  <div class="delivery-banner">
+      <img alt="delivery icon" src="./assets/images/icons8-delivery-100.png">
+    <p class="delivery">Free standard delivery on orders over $50</p>
+  </div>
 <section id="newsletter">
   <div class="submit-form">
    <div>
       <h2>Don't be a plant killer!</h2>
-      <p>Sign up to our newsletter to find out how to keep your plants alive!</p>
+      <h3>Sign up to our newsletter to find out how to keep your plants alive!</h3>
       <form id="form" action="https://www.freecodecamp.com/email-submit">
         <input id="email" type="email" name="email" class="user-input" placeholder="Enter your email address">
         <input type="submit" id="submit">
@@ -117,14 +120,21 @@
   </div>
 </section>
   <section id="about-us">
-    <h2>Who we are</h2>
-    <div>
-      <p>We are a family-run company with a passion for gardening which we would love to share with you!</p>
-      <h3>Email us </h3>
-      <p>If you can't find what you're looking for, please drop us an email on <strong>interior@plantstore.com</strong> and we'll get back to you as soon as we can.</p>
-      <h3>Customer service opening hours</h3>
-      <p>Monday to Friday (excluding bank holidays): 9am to 5pm.</p>
-
+    <h2>Why us?</h2>
+    <div class="why-us-container">
+      <div class="why-us-box">
+      <img src="./assets/images/icons8-quality-96.png" alt="quality icon">
+        <p>We source directly from top-rated growers which makes the quality of our plants unbeatable.</p>
+      </div>
+      <div class="why-us-box">
+      <img src="./assets/images/icons8-fast-download-96.png" alt="clock icon">
+        </p> All plants are shipped within 24 hours and we deliver them to your door 7 days a week.</p>
+      </div>
+      <div class="why-us-box">
+        <img src="./assets/images/icons8-chat-100.png" alt="clock icon">
+        <p>If you have any questions, please <a href="mailto:testing@plantstore.com" target="_blank" class="email-us">email us</a> and we'll get back to you as soon as we can.</p>
+    </div>
+  </div>
 </section>
 </div>
      <footer>
@@ -134,33 +144,7 @@
      <li><a href="#about-us">Customer Service</a></li>
    </ul> 
   </footer>
-<script>
-
-let myVar2 = setInterval(changeImg,2500);
-let myImage = document.getElementById("main_img");
-
-function changeImg() {
-    let mySrc = myImage.getAttribute('src');
-    switch (mySrc) {
-      case "./assets/images/severin-candrian-unsplash.jpg":
-        myImage.setAttribute('src', "./assets/images/header_img2-unsplash.jpg");
-        break;
-      case "./assets/images/header_img2-unsplash.jpg":
-        myImage.setAttribute('src', "./assets/images/header_img3-unsplash.jpg");
-        break;
-      case "./assets/images/header_img3-unsplash.jpg":
-        myImage.setAttribute('src', "./assets/images/header_img4-unsplash.jpg");
-        break;
-      case "./assets/images/header_img4-unsplash.jpg":
-        myImage.setAttribute('src', "./assets/images/header_img6-unsplash.jpg");
-        break;
-      case "./assets/images/header_img6-unsplash.jpg":
-        myImage.setAttribute('src', "./assets/images/header_img7-unsplash.jpg");
-        break;
-      default:
-        myImage.setAttribute('src', "./assets/images/severin-candrian-unsplash.jpg");
-    }
-}
-</script>
+ </div>
+<script type="text/javascript" src="./assets/js/plantStore.js"> </script>
 </body>
 </html>

@@ -6,7 +6,7 @@
 }
 
 :root{
-  --faded-green: #f5f9fa;
+  --faded-green: #fafafa;
   --light-green: #e6f0f1;
   --darker-green: #50867a;
   --green-hover: hsla(165, 40%, 50%, 0.8);
@@ -15,11 +15,12 @@
 }
 
 body {
-  background-color: #e6f0f1;
+  background-color: var(--light-green);
   font-family:'Lato', sans-serif;
   color: var(--dark-grey);
   font-size: 1.1rem;
 }
+
 
 /* header */
 img[id="header-img"] {
@@ -79,6 +80,7 @@ nav > ul {
 
 h2 {
   font-size: 2.25rem;
+  margin: 2.5rem;
 }
 h3 {
   font-size: 1.25rem;
@@ -97,6 +99,7 @@ h4 {
   display: flex;
   align-items: center;
   height: 90vh;
+  flex-direction: row;
 }
 
 .box-one {
@@ -136,12 +139,26 @@ h4 {
   height: 100%;
 }
 
+@media (max-width: 876px) {
+  #main-page {
+    flex-direction: column;
+  }
+  .box-one {
+    width: 100%;
+  }
+
+  .box-two {
+    width: 100%;
+  }
+}
+
+
 /* Plant section */
 /*rgba(255, 255, 255, 0.637);*/
 #plants {
   text-align: center;
   padding: 2.5rem 0;
-  background-color: #fafafa;
+  background-color: var(--faded-green);
   border-radius: 10px;
 }
 
@@ -174,7 +191,7 @@ h4 {
   cursor: pointer;
 }
 #plants a:hover, #pots a:hover {
-  transition: 0.25s;
+
   border-bottom: 2px solid var(--green-button);
 
 }
@@ -244,6 +261,29 @@ h4 {
   background-color: var(--green-hover);
 }
 
+
+/*delivery banner*/
+
+.delivery-banner {
+  text-align:center;
+  padding: 1rem 0;
+  background-color: var(--faded-green);
+  font-size: 1.75rem;
+  font-weight: 900;
+
+}
+.delivery-banner img{
+display: inline;
+vertical-align: middle;
+}
+
+.delivery {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 2rem;
+}
+
+
 /* newsletter */
 
 #newsletter {
@@ -256,15 +296,11 @@ h4 {
 .submit-form {
   display: flex;
   position: relative;
-  top: 20%;
+  top: 10%;
   align-items: center;
   justify-content: center;
 }
-.submit-form p {
-  padding: 1.25rem;
-  font-size: 1.25rem;
 
-}
 #newsletter input[type="email"] {
   height: 2.75rem;
   padding: 1rem;
@@ -299,20 +335,29 @@ h4 {
 #about-us {
   margin: 2rem;;
   text-align: center;
-
-}
-#about-us p {
-margin: 1rem 1rem;
-font-size: 1.25rem;
-}
-#about-us h2 {
-  margin: 2.5rem;
 }
 
-#about-us h3 {
+.why-us-container {
+display:flex;
+align-items: center;
+justify-content: center;
+margin: 2.75rem;
+
+}
+
+.why-us-box {
+margin: 0.75rem;
+}
+
+.why-us-box img {
+  width: 70px;
+  height: auto;
+}
+
+#about-us a {
   color: var(--green-button);
-  padding: 1.25rem;
 }
+
 
 footer {
   display: flex;
@@ -338,7 +383,6 @@ footer > ul {
   footer > ul {
     justify-content: space-around;
     align-items: center;
-    width: 100%;
   }
 }
 
