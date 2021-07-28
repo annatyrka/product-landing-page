@@ -6,18 +6,30 @@
 		<link rel="stylesheet" href="./assets/main.css" type="text/css"/>
 	</head>
     <body>
-    <div class="wrapper">
-
-  <header id="header">
+  <header>
     <div class="logo">
+    <a href="main-page">
       <img id="header-img" src="./assets/images/Logo-Plants-In-Pots.jpeg" alt="company's logo">
+    </a>
     </div>
     <nav id="nav-bar">
-      <ul>
-        <li><a class="nav-link" href="#plants">Plants</a></li>
-        <li><a class="nav-link" href="#pots">Pots</a></li>
-        <li><a class="nav-link" href="#about-us">About us</a></li>
-      </ul>
+      <div class="dropdown">
+        <a class="nav-link">Plants</a>
+        <div class="dropdown-content">
+          <a href="#">Indoor Plants</a>
+          <a href="#">Outdoor Plants</a>
+          <a href="#">Easy care sets</a>
+        </div>
+      </div>
+        <div class="dropdown">
+          <a class="nav-link">Pots</a>
+        <div class="dropdown-content">
+          <a href="#">Indoor Pots</a>
+          <a href="#">Ourdoor Pots</a>
+          <a href="#">New In</a>
+        </div>
+      </div>
+          <a class="nav-link" href="#about-us">About us</a>
     </nav>
   </header>
 
@@ -55,7 +67,7 @@
 
 
           <h3>Ficus elastica 'Robusta'</h3>
-          <p>Looking for a green houseplant that is not demanding and grows rapidly? Say no more!</p>
+          <p>Looking for a green houseplant that is not demanding and grows rapidly? <br>Say no more!</p>
           <button class="btn"><img src="./assets/images/icons8-bag-48.png">add</button>
 
         </div>
@@ -110,8 +122,8 @@
 <section id="newsletter">
   <div class="submit-form">
    <div>
-      <h2>Don't be a plant killer!</h2>
-      <h3>Sign up to our newsletter to find out how to keep your plants alive!</h3>
+      <h2>Your plants keep dying?</h2>
+      <h3>Sign up to our newsletter to find out how to keep them alive!</h3>
       <form id="form" action="https://www.freecodecamp.com/email-submit">
         <input id="email" type="email" name="email" class="user-input" placeholder="Enter your email address">
         <input type="submit" id="submit">
@@ -124,7 +136,7 @@
     <div class="why-us-container">
       <div class="why-us-box">
       <img src="./assets/images/icons8-quality-96.png" alt="quality icon">
-        <p>We source directly from top-rated growers which makes the quality of our plants unbeatable.</p>
+        <p>We source directly from top-rated growers which enusres unbeatable qualit.</p>
       </div>
       <div class="why-us-box">
       <img src="./assets/images/icons8-fast-download-96.png" alt="clock icon">
@@ -136,7 +148,7 @@
     </div>
   </div>
 </section>
-</div>
+<div>
      <footer>
    <ul>
      <li><a href="#about-us">Privacy</a></li>

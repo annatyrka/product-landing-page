@@ -23,19 +23,16 @@ body {
 
 /* header */
 img[id="header-img"] {
-  height: 110px;
+  height: 90px;
   width: auto;
   }
 
-li {
-  list-style: none;
-  padding: 0.75rem;
-  white-space: nowrap;
-}
 
 a {
-  color: #000;
+  color:hsla(0, 0%, 0%, 0.8);
   text-decoration: none;
+  padding: 0 1.5rem;
+  display:block;
 }
 
 header {
@@ -45,15 +42,50 @@ header {
   display: flex;
   align-items: center;
   background-color: white;
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   width:100%;
+}
+/* Dropdwon menu*/
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+/* dropdown content - hidden by default */
+.dropdown-content {
+  padding-top: 1.75rem;
+  visibility: hidden;
+  background-color: white;
+  position: absolute;
+  width: 100vw;
+  z-index: 1;
+  opacity: 0;
+}
+.dropdown:hover .dropdown-content{
+visibility: visible;
+opacity: 1;
+transition: 0.75s ease-out;
+}
+.dropdown-content a:hover {
+  color: var(--green-button);
+}
+
+/* links inside the dropdown */
+.dropdown-content a {
+padding: 1rem 2rem;
+text-decoration: none;
+display: block;
+font-size: 1rem;
+white-space: nowrap;
+width: 100%;
 }
 
 .logo {
   margin: 0 1.5rem;
 }
-
-nav > ul {
+.nav-link:hover {
+  cursor: pointer;
+}
+nav {
   display: flex;
   justify-content: space-around;
   flex-direction: row;
@@ -65,7 +97,7 @@ nav > ul {
 /* content */
 .container {
   position: relative;
-  top: 110px;
+  top: 90px;
   width: 100%;
 }
 
@@ -148,14 +180,17 @@ h4 {
 .plant, .pots {
   border: solid 1px var(--darker-green);
   border-radius: 15px;
-  padding: 1.25rem 0.75rem;
+  padding: 1.25rem 1.25rem;
   margin: 1rem 1.75rem;
   line-height: 25px;
   max-width: min-content;
+  
 }
-c
+.plant p {
+  padding: 0 1rem;
+}
 
-#plants a, #pots a{
+#plants a, #pots a {
   display: inline-block;
   color: var(--green-button);
   font-size: 1.75rem;
@@ -207,7 +242,6 @@ c
   color: var(--green-button);
   transition: 0.25s;
 }
-
 
 .price {
   font-size: 1.25rem;
@@ -311,6 +345,7 @@ vertical-align: middle;
   transition: 0.25s;
 }
 
+/* About us */
 #about-us {
   margin: 2rem;;
   text-align: center;
@@ -320,13 +355,17 @@ vertical-align: middle;
 display:flex;
 align-items: center;
 justify-content: center;
-margin: 2.75rem;
+margin: 1.75rem;
 }
 
 .why-us-box {
-margin: 0.75rem;
+  width: 30%;
+  margin: 0.5rem;
 }
-
+.why-us-box a {
+  display: inline;
+  padding: 0;
+}
 .why-us-box img {
   width: 70px;
   height: auto;
@@ -339,11 +378,11 @@ margin: 0.75rem;
 footer {
   display: flex;
   position: relative;
-  top: 175px;
+  top: 75px;
   justify-content: flex-end;
   background-color:white;
   padding: 0 50px;
-
+  text-decoration: none;
 }
 
 footer > ul {
@@ -353,9 +392,11 @@ footer > ul {
   flex-direction: row;
   padding: 2vw;
   width: 40vw;
-
 }
 
+footer li {
+  list-style: none;
+}
 @media only screen and (max-device-width : 576px) {
 
 h1 {
