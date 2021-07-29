@@ -22,17 +22,23 @@ body {
 
 
 /* header */
+
+/* logo */
 img[id="header-img"] {
   height: 90px;
   width: auto;
+ 
+  }
+  .logo {
+    margin: 0 1.5rem;
+    z-index: 2;
   }
 
-
-a {
-  color:hsla(0, 0%, 0%, 0.8);
+/* header */
+header a, footer a {
+  color: var(--dark-grey);
   text-decoration: none;
   padding: 0 1.5rem;
-  display:block;
 }
 
 header {
@@ -45,43 +51,7 @@ header {
   font-size: 1.15rem;
   width:100%;
 }
-/* Dropdwon menu*/
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-/* dropdown content - hidden by default */
-.dropdown-content {
-  padding-top: 1.75rem;
-  visibility: hidden;
-  background-color: white;
-  position: absolute;
-  width: 100vw;
-  z-index: 1;
-  opacity: 0;
-}
-.dropdown:hover .dropdown-content{
-visibility: visible;
-opacity: 1;
-transition: 0.75s ease-out;
-}
-.dropdown-content a:hover {
-  color: var(--green-button);
-}
 
-/* links inside the dropdown */
-.dropdown-content a {
-padding: 1rem 2rem;
-text-decoration: none;
-display: block;
-font-size: 1rem;
-white-space: nowrap;
-width: 100%;
-}
-
-.logo {
-  margin: 0 1.5rem;
-}
 .nav-link:hover {
   cursor: pointer;
 }
@@ -91,6 +61,83 @@ nav {
   flex-direction: row;
   padding: 1rem;
   width: fit-content;
+}
+
+/* Dropdwon menu*/
+
+/* dropdown content - hidden by default */
+.dropdown-content {
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  visibility: hidden;
+  padding: 1rem;
+  background-color: white;
+  position: absolute;
+  width: 100vw;
+  z-index: 1;
+  opacity: 0;
+  white-space: nowrap;
+  transition: 0.5s ease-out;
+}
+.dropdown-content img {
+  height: 350px;
+  width: auto;
+  display: block;
+}
+
+.dropdown:hover .dropdown-content{
+  visibility: visible;
+  opacity: 1;
+  transition: 0.5s ease-out;
+  }
+
+.dropdown-content a:hover {
+    color: var(--green-button);
+}
+body::after {
+  content: "";
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: fixed;
+  background-color: black;
+  opacity: 0;
+}
+
+ .dropdown:hover body::after {
+  opacity: 0.5;
+}
+
+/* links inside the dropdown without img*/
+
+.dropdown-links {
+  padding: 2rem  3rem;
+  width: max-content;
+}
+
+.dropdown-links a {
+padding: 0.75rem 1rem;
+text-decoration: none;
+display: block;
+font-size: 1rem;
+white-space: nowrap;
+}
+
+.all-category {
+  width: 25%;
+  display: block;
+  font-size: 1.75rem;
+  padding-top: 2.5rem;
+  text-align: center;
+}
+
+.dropdown-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 40%
 }
 
 
@@ -110,11 +157,13 @@ h2 {
   font-size: 2.25rem;
   margin: 2.5rem;
 }
+
 h3 {
   font-size: 1.25rem;
   text-align:center;
   padding: 1.25rem;
 }
+
 h4 {
   font-size: 1.3rem;
   padding-bottom: 10px;
@@ -141,7 +190,6 @@ h4 {
   margin: 1rem 0;
   text-align: center;
   font-size: 1.25rem;
- 
 }
 
 .shop-button {
@@ -154,8 +202,8 @@ h4 {
   width: 15rem;
   color: var(--light-green);
   border-radius: 5px;
- 
 }
+
 .shop-button:hover {
   transition: 0.25s ease-out;
   background-color: var(--green-hover);
@@ -169,7 +217,7 @@ h4 {
 
 
 /* Plant section */
-/*rgba(255, 255, 255, 0.637);*/
+
 #plants {
   text-align: center;
   padding: 2.5rem 0;
@@ -184,8 +232,8 @@ h4 {
   margin: 1rem 1.75rem;
   line-height: 25px;
   max-width: min-content;
-  
 }
+
 .plant p {
   padding: 0 1rem;
 }
@@ -196,7 +244,9 @@ h4 {
   font-size: 1.75rem;
   padding: 0.75rem 0;
   margin: 0.75rem 0;
+  text-decoration: none;
 }
+
 .plant:hover h3{
   transition: color 0.25s;  
   color: var(--green-button);
@@ -205,11 +255,11 @@ h4 {
 .plant:hover {
   cursor: pointer;
 }
+
 #plants a:hover, #pots a:hover {
-
   border-bottom: 2px solid var(--green-button);
-
 }
+
 .grid-container, .grid-pots{
   display: flex;
   flex-wrap: wrap;
@@ -219,13 +269,13 @@ h4 {
   padding: 1rem 0;
 }
 
-
 .plant img, .pots img {
   height: 100%;
   max-height: 20rem;
   width: auto;
   border-radius: 15px;
 }
+
 
 /* Pots section */
 
@@ -257,22 +307,24 @@ h4 {
   margin: 1rem auto;
   min-width: 175px;
   font-size: 1.25rem;
+  font-weight: 500;
   min-height: 2.25rem;
   text-transform: uppercase;
   color: white;
-  font-weight: 500;
-  cursor:pointer;
   border-radius: 5px;
   text-align: center;
 }
+
 .btn img {
   display: inline-block;
   height: 17.5px;
   padding: 0.2rem 0.5rem 0 0;
 }
+
 .btn:hover {
   transition: background-color 0.25s linear;
   background-color: var(--green-hover);
+  cursor:pointer;
 }
 
 
@@ -284,8 +336,8 @@ h4 {
   background-color: var(--faded-green);
   font-size: 1.75rem;
   font-weight: 900;
-
 }
+
 .delivery-banner img{
 display: inline;
 vertical-align: middle;
@@ -306,6 +358,7 @@ vertical-align: middle;
   height: 100vh;
   background-size: cover;
 }
+
 .submit-form {
   display: flex;
   position: relative;
@@ -338,8 +391,8 @@ vertical-align: middle;
   width: 100%;
   color: white;
   background-color: var( --green-button);
-
 }
+
 #newsletter input[type="submit"]:hover {
   background-color: var(--green-hover);
   transition: 0.25s;
@@ -362,10 +415,12 @@ margin: 1.75rem;
   width: 30%;
   margin: 0.5rem;
 }
+
 .why-us-box a {
   display: inline;
   padding: 0;
 }
+
 .why-us-box img {
   width: 70px;
   height: auto;
@@ -397,6 +452,8 @@ footer > ul {
 footer li {
   list-style: none;
 }
+
+
 @media only screen and (max-device-width : 576px) {
 
 h1 {
@@ -417,14 +474,19 @@ header {
   font-size: 3rem;
   padding: 1rem;
 }
+
 img[id="header-img"] {
   height: 15rem;
   width: auto;
-  }
+}
+
   .container {
     top: 17rem;
     bottom:15rem;
-  }
+}
+
+
+
 /* main page */
 
 
@@ -441,8 +503,8 @@ img[id="header-img"] {
   margin: 2rem;
   width: max-content;
   text-align: center;
-
 }
+
 .link-box {
   font-size:1.75rem;
   display: flex;
@@ -450,6 +512,7 @@ img[id="header-img"] {
   align-items: center;
   justify-content: center;
 }
+
 .shop-button {
   margin: 1.25rem;
   font-size: 3.25rem;
@@ -463,9 +526,9 @@ img[id="header-img"] {
   top: 0;
   width: 100%;
   height: 45vh;
-  
 }
-.grid-container, .grid-pots{
+
+.grid-container, .grid-pots {
 flex-direction: column;
 align-items: center;
 justify-content: center;
@@ -476,12 +539,14 @@ max-width: 100%;
   font-size: 2.25rem;
   line-height: 3rem;;
 }
+
   .plant img, .pots img {
     height: 100%;
     max-height: 70rem;
     width: auto;
     padding: 1.5rem;
   }
+
   .btn {
     display: flex;
     justify-content: center;
@@ -490,21 +555,23 @@ max-width: 100%;
     width: 100%;
     font-size: 2rem;
     max-width: 20rem;
-  }
+}
 .btn img {
     height: 4.75rem;
-  }
+}
   .plant p {
     text-align: justify;
     padding: 0.25em 1.75rem;
-  }
+}
   #newsletter {
     height: 45vh;
     background-size: cover;
-  }
+}
+
 .delivery {
   font-size: 2.75rem;
 }
+
 .submit-form {
 margin:1rem;
 }
@@ -522,11 +589,13 @@ margin:1rem;
   max-width: 40rem;
   width: 100%;
 }
-.us-container{
+
+.us-container {
   flex-direction: column;
   margin: 1rem;
   font-size: 1rem;
 }
+
   footer > ul {
     justify-content: space-around;
     align-items: center;
