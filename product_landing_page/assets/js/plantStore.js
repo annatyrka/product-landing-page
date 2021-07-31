@@ -1,32 +1,45 @@
 
-function myMove() {
-    let id = null;
-    const elem = document.getElementById("animate");
-    let pos = 0;
-    clearInterval(id);
-    id = setInterval(frame, 500);
-    function frame() {
-        if (pos == 250) {
-            clearInterval(id);
-        } else {
-            pos++;
-            elem.style.top = pos + 'px';
-            elem.style.left = pos + 'px';
-        }
-    }
+
+
+// dismiss cookies banner
+
+function dismiss() {
+    const cookieBanner = document.getElementById("cookie-banner");
+
+    cookieBanner.style.transform = "translateY(-90px)";
+    document.getElementsByTagName("header")[0].style.top = "0";
+
+    //setTimeout(function () { cookieBanner.remove() }, 3000);
 }
 
+// Assign an onclick event
 
-let myVar = setInterval(setColor, 3000);
+document.getElementById("cookie-button").onclick = dismiss;
 
-function setColor() {
-    let x = document.getElementById("plants");
-    x.style.backgroundColor = x.style.backgroundColor == "#fafafa" ? "#e6f0f1" : "#fafafa";
+
+//Show cookies banner
+
+function loadCookies() {
+
+    const cookieBanner = document.getElementById("cookie-banner");
+    document.getElementsByTagName("header")[0].style.top = "90px";
+
 }
 
-function stopColor() {
-    clearInterval(myVar);
+// show / hide overlay
+
+let overlay = document.getElementById("overlay");
+
+function showOverlay() {
+    overlay.style.zIndex = 0;
+    overlay.style.opacity = 0.5;
 }
+
+function hideOverlay() {
+    overlay.style.zIndex = -2;
+    overlay.style.opacity = 1;
+}
+
 
 
 // toggle main img

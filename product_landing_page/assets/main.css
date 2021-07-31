@@ -20,6 +20,44 @@ body {
   color: var(--dark-grey);
 }
 
+/* cookie banner*/
+
+#cookie-banner {
+  position: fixed;
+  top:0;
+  width: 100%;
+  height: 90px;
+  background-color: var(--green-button);
+  color: var(--faded-green);
+  transform: translateY(0);
+  transition: transform 1s;
+}
+
+.cookieblock-wrapper {
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 2rem 2rem;
+  padding:0 3rem;
+}
+
+.btn-js-cookie-accept {
+  background-color: var(--light-green);
+  border: none;
+  display: block;
+  margin-left: 3rem;
+  min-width: 120px;
+  font-size: 1.25rem;
+  min-height: 30px;
+  font-size: inherit;
+  text-transform: capitalize;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.btn-js-cookie-accept:hover {
+  cursor: pointer;
+}
 
 /* header */
 
@@ -43,13 +81,14 @@ header a, footer a {
 
 header {
   position: fixed;
-  top:0;
+  top: 0px;
   z-index: 1;
   display: flex;
   align-items: center;
   background-color: white;
   font-size: 1.15rem;
   width:100%;
+  transition: top 1s;
 }
 
 .nav-link:hover {
@@ -66,6 +105,7 @@ nav {
 /* Dropdwon menu*/
 
 /* dropdown content - hidden by default */
+
 .dropdown-content {
   left: 0;
   display: flex;
@@ -94,21 +134,6 @@ nav {
 
 .dropdown-content a:hover {
     color: var(--green-button);
-}
-body::after {
-  content: "";
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: fixed;
-  background-color: black;
-  opacity: 0;
-  z-index: -1;
-}
-
- .dropdown:hover body::after {
-  opacity: 0.5;
 }
 
 /* links inside the dropdown without img*/
@@ -147,6 +172,21 @@ white-space: nowrap;
   position: relative;
   top: 90px;
   width: 100%;
+}
+
+#overlay {
+  content: "";
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: black;
+  opacity: 1;
+  z-index: -1;
+  transition: opacity .5s;
 }
 
  h1 {
