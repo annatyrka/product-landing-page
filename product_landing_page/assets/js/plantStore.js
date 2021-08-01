@@ -9,7 +9,7 @@ function dismiss() {
     cookieBanner.style.transform = "translateY(-90px)";
     document.getElementsByTagName("header")[0].style.top = "0";
 
-    //setTimeout(function () { cookieBanner.remove() }, 3000);
+    setTimeout(function () { cookieBanner.remove() }, 3000);
 }
 
 // Assign an onclick event
@@ -32,7 +32,7 @@ let overlay = document.getElementById("overlay");
 
 function showOverlay() {
     overlay.style.zIndex = 0;
-    overlay.style.opacity = 0.5;
+    overlay.style.opacity = 0.4;
 }
 
 function hideOverlay() {
@@ -40,35 +40,6 @@ function hideOverlay() {
     overlay.style.opacity = 1;
 }
 
-
-
-// toggle main img
-
-let myVar2 = setInterval(changeImg, 1250);
-let myImage = document.getElementById("main_img");
-
-function changeImg() {
-    let mySrc = myImage.getAttribute('src');
-    switch (mySrc) {
-        case "./assets/images/severin-candrian-unsplash.jpg":
-            myImage.setAttribute('src', "./assets/images/header_img2-unsplash.jpg");
-            break;
-        case "./assets/images/header_img2-unsplash.jpg":
-            myImage.setAttribute('src', "./assets/images/header_img3-unsplash.jpg");
-            break;
-        case "./assets/images/header_img3-unsplash.jpg":
-            myImage.setAttribute('src', "./assets/images/header_img4-unsplash.jpg");
-            break;
-        case "./assets/images/header_img4-unsplash.jpg":
-            myImage.setAttribute('src', "./assets/images/header_img6-unsplash.jpg");
-            break;
-        case "./assets/images/header_img6-unsplash.jpg":
-            myImage.setAttribute('src', "./assets/images/header_img7-unsplash.jpg");
-            break;
-        default:
-            myImage.setAttribute('src', "./assets/images/severin-candrian-unsplash.jpg");
-    }
-}
 
 // change plant image
 
@@ -84,15 +55,15 @@ const objImgSrc = {
 function mOver(obj) {
     const objName = obj.getAttribute('id');
     const objId = document.getElementById(objName);
-    objId.style.opacity = 0.1;
-    setTimeout(function () { obj.setAttribute("src", objImgSrc[objName][1]) }, 400);
-    setTimeout(function () { objId.style.opacity = 1 }, 400);
+    objId.style.opacity = 0;
+    setTimeout(function () { obj.setAttribute("src", objImgSrc[objName][1]) }, 750);
+    setTimeout(function () { objId.style.opacity = 1 }, 750);
 }
 
 function mOut(obj) {
     const objName = obj.getAttribute('id');
     const objId = document.getElementById(objName);
-    objId.style.opacity = 0.1;
+    objId.style.opacity = 0;
     setTimeout(function () { obj.setAttribute("src", objImgSrc[objName][0]) }, 400);
     setTimeout(function () { objId.style.opacity = 1 }, 400);
 }
