@@ -64,6 +64,6 @@ function mOut(obj) {
     const objName = obj.getAttribute('id');
     const objId = document.getElementById(objName);
     objId.style.opacity = 0;
-    setTimeout(function () { obj.setAttribute("src", objImgSrc[objName][0]) }, 400);
-    setTimeout(function () { objId.style.opacity = 1 }, 400);
+    setTimeout(function () { obj.setAttribute("src", objImgSrc[objName][0]) }, 750);
+    setTimeout(function () { objId.style.opacity = 1 }, 750);
 }
