@@ -1,0 +1,42 @@
+{
+    "items":[
+        {
+            "sys": {"id":"4"},
+            "fields":  {
+                "title": "ceramic pot",
+                "price": 15,
+                "size": 15,
+                "image": {
+                    "url1": "./assets/images/ceramic_pot.jpg",
+                    "url2": "./assets/images/ceramic_pot2.jpg"
+                }
+            }
+        },
+    {
+            "sys": {"id":"5"},
+            "fields":  {
+                "title": "fractured pot",
+                "price": 20,
+                "size": 12,
+                "image":  {
+                    "url1": "./assets/images/fractured_pot.jpg",
+                    "url2": "./assets/images/fractured_pot2.jpg"
+                }
+
+            }
+        },
+        {
+            "sys": {"id":"6"},
+            "fields":  {
+                "title": "clay pot",
+                "price": 25,
+                 "size": 15,
+                "image": {
+                    "url1": "./assets/images/clay_pot.jpg",
+                    "url2": "./assets/images/clay_pot2.jpg"
+                }
+
+            }
+        }
+    ]
+}

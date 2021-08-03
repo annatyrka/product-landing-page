@@ -1,0 +1,45 @@
+{
+    "items":[
+        {
+            "sys": {"id":"1"},
+            "fields":  {
+                "title": "monstera deliciosa",
+                "price": 15,
+                "size": 15,
+                "description":"Monstera is a favourite plant for most plant-parents. It is also a great choice for the beginner.",
+                "image":  {
+                    "url": ["./assets/images/SwissCheese-24cm-2_c1557c95-7882-4478-8103-cb4619b48d91_1_grande.jpg","./assets/images/Monstera_2x.jpg"]
+                }
+
+            }
+        },
+        {
+            "sys": {"id":"2"},
+            "fields":  {
+                "title": "ficus elastica 'robusta'",
+                "price": 20,
+                "size": 25,
+                "description":"Looking for a green houseplant that is not demanding and grows rapidly? Say no more!",
+                "image":  {
+                    "url": ["./assets/images/Rubber-plant-Robusta-27cm-Weave_grande.jpg","./assets/images/Rubber-plant-Robusta-2.jpg"]
+                }
+
+            }
+        },
+        {
+            "sys": {"id":"3"},
+            "fields":  {
+                "title": "snake plant",
+                "price": 25,
+                "size": 20,
+                "description":"Snake plants help to filter indoor air. This quality makes it an ideal plant for bedroom decor.",
+                "image": {
+                    "url": ["./assets/images/snake-plant-zeylanica-black-beige-pot_grande.jpg","./assets/images/sansevieria-zeylanica-close-up-2_1024x1024@2x.jpg"]
+                }
+
+            }
+        }
+
+
+    ]
+}
