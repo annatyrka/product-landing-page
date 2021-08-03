@@ -251,8 +251,8 @@ class Storage {
        let plants = JSON.parse(localStorage.getItem('plantsProducts'));
        let product = products.find(product => product.id === id);
        let plant = plants.find(product => product.id === id);
-        console.log(product);
-        if (!product) {
+       
+       if (!product) {
             return plant
         }
         return product
