@@ -369,7 +369,7 @@ h4 {
 .plant-img {
   position: absolute;
   left: 0;
-  transition: opacity 1s linear;
+  transition: opacity 0.75s linear;
   height: 300px;
   width: 275px;
 }

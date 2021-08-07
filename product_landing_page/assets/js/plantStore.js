@@ -233,8 +233,94 @@ getBagButtons() {
             cartOverlay.style.visibility= "visible";
             cartDOM.style.transform = "translateX(0)";
         }
-}
 
+        setupAPP() {
+            cart = Storage.getCart();
+            this.setCartValues(cart);
+            this.populateCart(cart);
+            cartBtn.addEventListener('click', this.showCart);
+            closeCartBtn.addEventListener('click', this.hideCart);
+        }
+        populateCart(cart) {
+            cart.forEach(item =>this.addCartItem(item))
+        }
+
+        
+        hideCart() {
+            cartOverlay.style.visibility = "hidden";
+            cartDOM.style.transform = "translateX(100%)";
+        }
+        cartLogic() {
+            clearCartBtn.addEventListener('click', () => {this.clearCart()});
+
+
+            //cart funcionality
+            cartContent.addEventListener('click', event => {
+                // removing item when clickin on 'remove'
+                if (event.target.classList.contains('remove-item')) {
+                    let removeItem = event.target;
+                    let id = removeItem.dataset.id;
+                    cartContent.removeChild(removeItem.parentElement.parentElement);
+                   // cartContent.removeChild
+                    this.removeItem(id);  //removes item form the cart
+                } 
+                
+                // increasing items
+                else if (event.target.classList.contains('fa-chevron-up')) {
+                let addAmount = event.target;
+                let id = addAmount.dataset.id;
+                let tempItem = cart.find(item => item.id  === id);
+                tempItem.amount += 1;
+                //updating local storage
+                Storage.saveCart(cart);
+                this.setCartValues(cart);
+                addAmount.nextElementSibling.innerText = tempItem.amount;
+                }
+                else if (event.target.classList.contains('fa-chevron-down')) {
+                    let subtractAmount = event.target;
+                    let id = subtractAmount.dataset.id
+                    console.log(id);
+                    let tempItem = cart.find(item => item.id === id);
+                    tempItem.amount -= 1;
+                    if(tempItem.amount > 0) {
+                        //updating local storage
+                        Storage.saveCart(cart);
+                        this.setCartValues(cart);
+                        subtractAmount.previousElementSibling.innerText = tempItem.amount;
+                    } else {
+                        cartContent.removeChild(subtractAmount.parentElement.parentElement);
+                        this.removeItem(id);
+                    }
+                  
+                    
+                       
+                    
+                    
+                }
+
+                
+            })
+        }
+        clearCart() {
+            let cartItems = cart.map(item => item.id);
+            cartItems.forEach(id => this.removeItem(id));
+            while(cartContent.children.length  > 0) {
+                cartContent.removeChild(cartContent.children[0])
+            }
+        }
+        removeItem(id) {
+            cart = cart.filter(item => item.id !== id)  //updates the cart
+            this.setCartValues(cart);
+            Storage.saveCart(cart);
+            let button = this.getSingleButton(id);
+            button.disabled  = false;
+            button.innerHTML = `<img src="./assets/images/icons8-bag-48.png" />add`;
+            this.hideCart();
+        }
+        getSingleButton(id) {
+            return buttonsDOM.find(button => button.dataset.id === id);
+        }
+}
 //local storage
 class Storage {
     static saveProducts(products) {    //to be called on an object class, not on objects
@@ -267,6 +353,10 @@ class Storage {
     static saveCart()  {
         localStorage.setItem('cart', JSON.stringify(cart))  // adding cart to local storage
     }
+    static getCart() {
+        return localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : []
+    }
+
 }
 
 /*   
@@ -284,6 +374,8 @@ const ui = new UI();
 const products = new Products();
 const plantsProducts = new PlantsProducts();   // added
 
+//setup app
+ui.setupAPP();
 
 //get all product
 products.getProducts().then(products =>  {
@@ -294,6 +386,7 @@ Storage.saveProducts(products);     //uploading to local storage
 Storage.savePlantsProducts(plantsProducts); 
  })).then(() => {                     // to ensure the above happend before we can access the button
 ui.getBagButtons()
+ui.cartLogic()
 })
 })                              
 
