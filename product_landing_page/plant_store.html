@@ -4,6 +4,9 @@
     <title>Plant store</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="./assets/main.css" type="text/css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap");
+    </style>
     <script
       src="https://kit.fontawesome.com/b267fde2a0.js"
       crossorigin="anonymous"
@@ -52,7 +55,7 @@
           <div class="dropdown-content">
             <div class="dropdown-container">
               <div class="all-category">
-                <a href="#">All Plants</a>
+                <a href="#plants">All Plants</a>
               </div>
 
               <div class="dropdown-links">
@@ -80,7 +83,7 @@
           <div class="dropdown-content">
             <div class="dropdown-container">
               <div class="all-category">
-                <a href="#">All Pots</a>
+                <a href="#pots">All Pots</a>
               </div>
               <div class="dropdown-links">
                 <a href="#">Indoor Pots</a>
@@ -118,12 +121,8 @@
             <h1 id="animate">Greenify your space</h1>
 
             <div class="link-box">
-              <a class="shop-button" href="./shop_plants/shop_plants.html"
-                >Shop plants</a
-              >
-              <a class="shop-button" href="./shop_pots/shop_pots.html"
-                >Shop pots</a
-              >
+              <a class="shop-button" href="#plants">Shop plants</a>
+              <a class="shop-button" href="#pots">Shop pots</a>
             </div>
           </div>
 
@@ -187,7 +186,12 @@
             <span class="close-cart">
               <i class="fas fa-window-close"></i>
             </span>
-            <h2>your cart</h2>
+            <h2 id="your-bag">Your bag is empty</h2>
+            <!-- 
+            <div class="bag-plant">
+              <img src="./assets/images/icons8-potted-plant-100.png" />
+            </div>
+            -->
             <div class="cart-content">
               <!-- cart item -->
 
@@ -199,8 +203,8 @@
             </div>
 
             <div class="cart-footer">
-              <h3>your total : $ <span class="cart-total">0</span></h3>
-              <button class="btn clear-cart">clear cart</button>
+              <h3>Total: $<span class="cart-total">0</span></h3>
+              <button class="btn clear-cart">continue shopping</button>
             </div>
           </div>
         </div>

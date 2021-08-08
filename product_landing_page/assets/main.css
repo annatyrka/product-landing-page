@@ -1,4 +1,6 @@
-@import "https://fonts.googleapis.com/css?family=Lato:400,700";
+html {
+  font-family: "Lato", sans-serif;
+}
 
 * {
   margin: 0;
@@ -7,8 +9,8 @@
 }
 
 :root {
-  --faded-green: #fafafa;
-  --light-green: #e6f0f1;
+  --faded-green: #fefefe;
+  --light-green: #ebf1f0;
   --darker-green: #50867a;
   --green-hover: hsla(165, 40%, 50%, 0.8);
   --green-button: #20847c;
@@ -92,6 +94,7 @@ header {
   width: 100%;
   transition: top 1s;
   transition-delay: 0.5s;
+  box-shadow: 0 0.0625rem 0.25rem 0 rgba(61, 66, 80, 0.18);
 }
 
 .nav-link:hover {
@@ -99,7 +102,6 @@ header {
 }
 nav {
   display: flex;
-
   justify-content: space-around;
   flex-direction: row;
   padding: 1rem;
@@ -433,23 +435,23 @@ h4 {
 .bag-btn {
   background-color: var(--green-button);
   border: none;
-  display: block;
-  padding: 0.15rem;
+  display: flex;
+  flex-direction: row;
   margin: 1rem auto;
   min-width: 175px;
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 500;
   min-height: 2.25rem;
   text-transform: uppercase;
   color: white;
   border-radius: 5px;
-  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .bag-btn img {
-  display: inline-block;
-  height: 17.5px;
-  padding: 0.2rem 0.5rem 0 0;
+  height: 20px;
+  margin-right: 0.5rem;
 }
 
 .bag-btn:hover {
@@ -465,9 +467,9 @@ h4 {
   right: 0;
   width: 100%;
   height: 100%;
-  z-index: 2;
-  background-color: rgba(255, 255, 255, 0.7);
-  transition: opacity 1s;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.8);
+  transition: visibility 0.5s;
   visibility: hidden;
 }
 
@@ -482,7 +484,7 @@ h4 {
   z-index: 3;
   padding: 1.5rem;
   transform: translateX(100%);
-  transition: translate 1s;
+  transition: transform 0.5s linear;
 }
 
 @media screen and (min-width: 768px) {
@@ -491,12 +493,6 @@ h4 {
     min-width: 450px;
   }
 }
-.showCart {
-  transform: translateX(0);
-}
-.transparentBcg {
-  visibility: visbile;
-}
 
 .close-cart {
   font-size: 1.7rem;
@@ -504,9 +500,19 @@ h4 {
   color: black;
 }
 .cart h2 {
-  text-transform: capitalize;
   text-align: center;
-  margin-bottom: 2rem;
+  font-size: 1.75rem;
+  margin-bottom: 2.5rem;
+}
+.cart-content {
+  margin: 0 1em;
+  border-bottom: rgb(199, 194, 194) 1px solid;
+}
+.bag-plant img {
+  height: 100px;
+  margin: 0 auto;
+  display: block;
+  padding-bottom: 2rem;
 }
 
 /*-------- cart item --------*/
@@ -515,7 +521,7 @@ h4 {
   display: grid;
   align-items: center;
   grid-template-columns: auto 1fr auto;
-  grid-column-gap: 1.5rem;
+  grid-column-gap: 1.75rem;
   margin: 1.5rem 0;
 }
 .cart-item img {
@@ -526,6 +532,7 @@ h4 {
   font-size: 0.85rem;
   text-transform: capitalize;
   letter-spacing: var(--mainSpacing);
+  color: var(--green-button);
 }
 .cart-item h5 {
   margin: 0.5rem 0;
@@ -544,15 +551,32 @@ h4 {
   cursor: pointer;
 }
 /*-------- end of cart item --------*/
-
-.cart-footer {
-  margin-top: 2rem;
+.clear-cart {
+  background-color: var(--green-button);
+  border: none;
+  margin: auto;
+  min-width: 170px;
+  font-size: 1rem;
+  font-weight: 500;
+  min-height: 2.25rem;
+  text-transform: capitalize;
+  color: white;
+  border-radius: 5px;
   text-align: center;
+  cursor: pointer;
 }
 
-.cart-footer h3 {
+.clear-cart:hover {
+  transition: background-color 0.25s linear;
+  background-color: var(--green-hover);
+}
+.clear-cart i {
+  margin-right: 0.5rem;
+}
+.cart-footer {
+  margin-top: 1rem;
+  text-align: center;
   text-transform: capitalize;
-  margin-bottom: 1rem;
 }
 
 /*-------- end of cart --------*/
@@ -707,13 +731,14 @@ footer li {
 
   header {
     max-height: 17rem;
-    font-size: 3rem;
+    font-size: 2.25rem;
     padding: 0rem;
+    justify-content: space-between;
     white-space: nowrap;
   }
 
   img[id="header-img"] {
-    height: 13rem;
+    height: 11rem;
     width: auto;
   }
 
@@ -722,7 +747,7 @@ footer li {
   }
 
   .container {
-    top: 17rem;
+    top: 11rem;
     bottom: 15rem;
   }
 
@@ -738,17 +763,18 @@ footer li {
   .box-one {
     position: absolute;
     top: 50vh;
-    margin: 2rem;
     width: max-content;
-    text-align: center;
   }
 
   .link-box {
     font-size: 1.75rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
   }
 
   .shop-button {
@@ -763,7 +789,12 @@ footer li {
     position: absolute;
     top: 0;
     width: 100%;
-    height: 45vh;
+    height: 40vh;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
   }
 
   .grid-plants,
@@ -797,6 +828,11 @@ footer li {
     width: 700px;
   }
 
+  #plants a,
+  #pots a {
+    font-size: 2.75rem;
+  }
+
   .price {
     font-size: 2rem;
     font-weight: 900;
@@ -808,13 +844,14 @@ footer li {
     justify-content: center;
     align-items: center;
     line-height: 3.5rem;
+    height: 4rem;
     width: 100%;
     font-size: 2rem;
     max-width: 20rem;
     margin-bottom: 30px;
   }
   .bag-btn img {
-    height: 4.75rem;
+    height: 2rem;
   }
   .plant p {
     text-align: justify;
@@ -830,13 +867,21 @@ footer li {
   }
 
   .submit-form {
-    margin: 1rem;
+    margin: 4rem;
+  }
+  .submit-form h2 {
+    font-size: 2.75rem;
+  }
+  .submit-form h3 {
+    font-size: 2.25rem;
+    padding: 2rem 4rem;
   }
 
   #newsletter input[type="email"] {
     padding: 1.25rem;
-    font-size: 1.75rem;
+    font-size: 2rem;
     max-width: 40rem;
+    height: 4rem;
     width: 100%;
   }
 
@@ -856,10 +901,12 @@ footer li {
     width: 80%;
     font-size: 2rem;
   }
-
-  footer > ul {
-    justify-content: space-around;
+  footer {
+    justify-content: center;
     align-items: center;
+  }
+  footer > ul {
     font-size: 1.7rem;
+    white-space: nowrap;
   }
 }

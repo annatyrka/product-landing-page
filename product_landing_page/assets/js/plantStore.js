@@ -19,7 +19,6 @@ let cart = [];
 // buttons
 
 let buttonsDOM = [];
-
 //getting the pots
 
 class Products{
@@ -190,8 +189,8 @@ getBagButtons() {
 
                 this.addCartItem(cartItem);
                 //show the cart
-
-                this.showCart();
+                this.bagIsEmpty();
+                //this.showCart();
             });
         
 
@@ -209,7 +208,27 @@ getBagButtons() {
         cartItems.innerText = itemsTotal;
     }
 
+    bagIsEmpty() {
+                console.log(cartContent.childElementCount)
+            if (cartContent.childElementCount === 0 && document.querySelector('.bag-plant') === null) {
+                clearCartBtn.innerHTML = 'continue shopping';
+                clearCartBtn.addEventListener('click',this.hideCart);
+                document.querySelector('#your-bag').innerText = "Your bag is empty";
+                const div = document.createElement('div');
+                div.classList.add('bag-plant');
+                div.innerHTML =  '<img src="./assets/images/icons8-potted-plant-100.png" />'
+                cartDOM.insertBefore(div,cartDOM.childNodes[4]);
+            }
+            else if (cartContent.childElementCount !== 0 && document.querySelector('.bag-plant') !== null) {
+                clearCartBtn.innerHTML = '<i class="far fa-trash-alt"></i> remove all';
+                document.querySelector('#your-bag').innerText = "Your bag";
+                let plantIconDiv = document.querySelector('.bag-plant');
+                plantIconDiv.remove();
+            }
+    }
+
     addCartItem(item) {
+
         const div = document.createElement('div');
         div.classList.add('cart-item');
         div.innerHTML = `<img
@@ -219,7 +238,7 @@ getBagButtons() {
                 <div>
                   <h4>${item.title}</h4>
                   <h5>$${item.price}</h5>
-                  <span class="remove-item" data-id=${item.id}>remove</span>
+                  <span class="remove-item" data-id=${item.id}><i class="far fa-trash-alt"></i></span>
                 </div>
                 <div>
                   <i class="fas fa-chevron-up" data-id=${item.id}></i>
@@ -251,14 +270,17 @@ getBagButtons() {
             cartDOM.style.transform = "translateX(100%)";
         }
         cartLogic() {
-            clearCartBtn.addEventListener('click', () => {this.clearCart()});
+            clearCartBtn.addEventListener('click', () => {
+                this.clearCart()
+
+            });
 
 
             //cart funcionality
             cartContent.addEventListener('click', event => {
                 // removing item when clickin on 'remove'
-                if (event.target.classList.contains('remove-item')) {
-                    let removeItem = event.target;
+                if (event.target.parentElement.classList.contains('remove-item')) {
+                    let removeItem = event.target.parentElement;
                     let id = removeItem.dataset.id;
                     cartContent.removeChild(removeItem.parentElement.parentElement);
                    // cartContent.removeChild
@@ -290,15 +312,12 @@ getBagButtons() {
                     } else {
                         cartContent.removeChild(subtractAmount.parentElement.parentElement);
                         this.removeItem(id);
+                        
                     }
-                  
-                    
-                       
-                    
-                    
+                                                                             
                 }
 
-                
+                this.bagIsEmpty();
             })
         }
         clearCart() {
@@ -306,7 +325,9 @@ getBagButtons() {
             cartItems.forEach(id => this.removeItem(id));
             while(cartContent.children.length  > 0) {
                 cartContent.removeChild(cartContent.children[0])
+                this.bagIsEmpty();
             }
+
         }
         removeItem(id) {
             cart = cart.filter(item => item.id !== id)  //updates the cart
@@ -315,7 +336,8 @@ getBagButtons() {
             let button = this.getSingleButton(id);
             button.disabled  = false;
             button.innerHTML = `<img src="./assets/images/icons8-bag-48.png" />add`;
-            this.hideCart();
+           // this.hideCart();
+           this.bagIsEmpty();
         }
         getSingleButton(id) {
             return buttonsDOM.find(button => button.dataset.id === id);
@@ -387,6 +409,7 @@ Storage.savePlantsProducts(plantsProducts);
  })).then(() => {                     // to ensure the above happend before we can access the button
 ui.getBagButtons()
 ui.cartLogic()
+ui.bagIsEmpty()
 })
 })                              
 
