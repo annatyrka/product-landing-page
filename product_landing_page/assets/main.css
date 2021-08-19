@@ -11,7 +11,7 @@ html {
 :root {
   --faded-green: #fefefe;
   --light-green: #ebf1f0;
-  --darker-green: #50867a;
+  --darker-green: #78928c;
   --green-hover: hsla(165, 40%, 50%, 0.8);
   --green-button: #20847c;
   --dark-grey: hsla(0, 0%, 0%, 0.8);
@@ -127,7 +127,7 @@ nav {
   transition: 0.5s ease-out;
 }
 .dropdown-content img {
-  height: 350px;
+  height: 250px;
   width: auto;
   display: block;
 }
@@ -155,6 +155,7 @@ nav {
   display: block;
   font-size: 1rem;
   white-space: nowrap;
+  font-size: 1.1rem;
 }
 
 .all-category {
@@ -354,32 +355,36 @@ h4 {
 .pot {
   border: solid 1px var(--darker-green);
   border-radius: 15px;
-  padding: 1.25rem 1.25rem;
+  padding: 1rem 1.25rem;
   margin: 1rem 1.75rem;
   line-height: 25px;
-  max-width: min-content;
+  max-width: 22.5rem;
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
 .crossfade {
   position: relative;
-  margin: 0 auto;
-  height: 300px;
-  width: 275px;
+  margin: 0.75rem auto;
+  height: 340px;
+  width: 315px;
 }
 .pot-img,
 .plant-img {
   position: absolute;
   left: 0;
   transition: opacity 0.75s linear;
-  height: 300px;
-  width: 275px;
+  height: 340px;
+  width: 315px;
 }
 .pot-img.top:hover,
 .plant-img.top:hover {
   opacity: 0;
 }
 
+.description {
+  height: 4.5rem;
+}
 #plants a,
 #pots a {
   display: inline-block;
@@ -390,12 +395,29 @@ h4 {
   text-decoration: none;
 }
 
-.plant h3,
-.pot h3 {
+#plants h3,
+#pots h3 {
+  font-size: 1.75rem;
+  display: inline-block;
+  max-width: 74.5rem;
+  width: 100%;
+  border-radius: 10px;
+}
+
+#plants h3 {
+  background-color: var(--light-green);
+}
+
+#pots h3 {
+  background-color: var(--faded-green);
+}
+
+.plant h4,
+.pot h4 {
   text-transform: capitalize;
 }
-.plant:hover h3,
-.pot:hover h3 {
+.plant:hover h4,
+.pot:hover h4 {
   transition: color 0.25s;
   color: var(--green-button);
 }
@@ -816,7 +838,6 @@ footer li {
   }
 
   .crossfade {
-    position: relative;
     margin: 0 auto;
     height: 800px;
     width: 700px;
@@ -832,13 +853,19 @@ footer li {
   #pots a {
     font-size: 2.75rem;
   }
-
+  #plants h3,
+  #pots h3 {
+    font-size: 3rem;
+    padding: 2.5rem 0;
+  }
   .price {
     font-size: 2rem;
     font-weight: 900;
     padding: 10px 0;
   }
-
+  .description {
+    height: 10.5rem;
+  }
   .bag-btn {
     display: flex;
     justify-content: center;

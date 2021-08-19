@@ -12,7 +12,9 @@ const cartItems = document.querySelector('.cart-items');
 const cartTotal = document.querySelector('.cart-total');
 const cartContent = document.querySelector('.cart-content');
 const potsProductsDOM = document.querySelector('.pots-products-center');
+const outPotsProductsDOM = document.querySelector('.out-pots-products-center');
 const plantsProductsDOM =  document.querySelector('.plants-products-center');
+const outPlantsProductsDOM = document.querySelector('.out-plants-products-center');
 // cart 
 let cart = [];
 
@@ -80,7 +82,10 @@ class UI {
     //display pots
 displayProducts(products) {
     let result  = '';
+    let resultOut ='';
     products.forEach(product => {
+
+        if (product.id < 10) {
         result +=`
                     <!-- single product-->
             <div class="pot">
@@ -98,7 +103,7 @@ displayProducts(products) {
              />
 
             </div>
-              <h3>${product.title}</h3>
+              <h4>${product.title}</h4>
               <p class="size">Size: ${product.size} cm </p>
               <p class="price">$${product.price}</p>
               <button class="bag-btn" data-id=${product.id}>
@@ -107,16 +112,49 @@ displayProducts(products) {
             </div>
             <!-- end of single product-->
         `;
+        } else {
+             resultOut +=`
+                    <!-- single product-->
+            <div class="pot">
+            <div class="crossfade">
+
+                <img
+                src=${product.imageBottom}
+                alt="pot"
+                class="pot-img bottom"
+              />
+                <img          
+                src=${product.imageTop}      
+                alt="pot"
+                class="pot-img top"
+             />
+
+            </div>
+              <h4>${product.title}</h4>
+              <p class="size">Size: ${product.size} cm </p>
+              <p class="price">$${product.price}</p>
+              <button class="bag-btn" data-id=${product.id}>
+                <img src="./assets/images/icons8-bag-48.png" />add
+              </button>
+            </div>
+            <!-- end of single product-->
+        `;
+        }
     });
 
-    potsProductsDOM.innerHTML = result;
+ potsProductsDOM.innerHTML = result;
+  outPotsProductsDOM.innerHTML = resultOut;   
 }
 
 // display plants
 
 displayPlantsProducts(plantsProducts) {
     let result  = '';
+    let resultOut ='';
     plantsProducts.forEach(product => {
+
+        // Indoor plants
+        if (product.id < 4) {
         result +=`
                     <!-- single product-->
             <div class="plant">
@@ -132,7 +170,7 @@ displayPlantsProducts(plantsProducts) {
                 class="plant-img top"
               />
             </div>
-              <h3>${product.title}</h3>
+              <h4>${product.title}</h4>
               <p class="size">Size: ${product.size} cm </p>
               <p class="price">$${product.price}</p>
                <p class="description">${product.description}
@@ -144,10 +182,48 @@ displayPlantsProducts(plantsProducts) {
   
             <!-- end of single product-->
         `;
+        } 
+        // Outdoor plants
+        else {
+                    resultOut +=`
+                    <!-- single product-->
+            <div class="plant">
+             <div class="crossfade">
+              <img
+                src="${product.imageBottom}"
+                alt="plant"
+                class="plant-img bottom"
+              />
+              <img
+                src="${product.imageTop}"
+                alt="plant"
+                class="plant-img top"
+              />
+            </div>
+              <h4>${product.title}</h4>
+              <p class="size">Size: ${product.size} cm </p>
+              <p class="price">$${product.price}</p>
+               <p class="description">${product.description}
+              </p>
+              <button class="bag-btn" data-id="${product.id}">
+                <img src="./assets/images/icons8-bag-48.png" />add
+              </button>
+            </div>
+  
+            <!-- end of single product-->
+        `;
+        }
     });
 
-    plantsProductsDOM.innerHTML = result;
+    
+        plantsProductsDOM.innerHTML = result;
+
+        outPlantsProductsDOM.innerHTML = resultOut;
+
+    
+    
 }
+
 
 getBagButtons() {
     const buttons = [...document.querySelectorAll(".bag-btn")];

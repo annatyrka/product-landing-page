@@ -38,6 +38,48 @@
                 }
 
             }
+        },
+        {
+            "sys": {"id":"4"},
+            "fields":  {
+                "title": "hebe plants",
+                "price": 12,
+                "size": 20,
+                "description":"Many people choose Hebe because of their ease of care and versatility. They are great as potted plants or for landscaping.",
+                "image": {
+                    "url": ["./assets/images/Hebe-outdoor-plant.jpg","./assets/images/Hebe-outdoor-plant2.jpg"]
+                }
+
+            }
+
+        },
+            {
+            "sys": {"id":"5"},
+            "fields":  {
+                "title": "Lily 'Stargazer' Pink",
+                "price": 24,
+                "size": 40,
+                "description":"The Lily ‘Stargazer’ Pink is just beautiful! It can be grown outdoors as a focal point in your garden or indoors as a potted plant.",
+                "image": {
+                    "url": ["./assets/images/Lily-outdoor-plant.jpg","./assets/images/Lily-outdoor-plant2.jpg"]
+                }
+
+            }
+
+        },
+           {
+            "sys": {"id":"6"},
+            "fields":  {
+                "title": "Calamondin Orange Tree",
+                "price": 57,
+                "size": 80,
+                "description":"Grow your very own oranges with our Citrus Tree! These small shrubs will look amazing both inside and outside your home.",
+                "image": {
+                    "url": ["./assets/images/Citrus-calamondino.jpg","./assets/images/Citrus-calamondino2.jpg"]
+                }
+
+            }
+
         }
 
 
