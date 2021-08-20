@@ -13,298 +13,303 @@
     ></script>
   </head>
   <body onload="loadCookies()">
-    <!--  cookies banner -->
+    <div class="wrapper">
+      <!--  cookies banner -->
 
-    <div id="cookie-banner">
-      <div class="cookieblock-wrapper">
-        <p>
-          We use <strong>cookies</strong> to improve your experience on our
-          site.
-        </p>
-        <div class="cookieblock-accept">
-          <button id="cookie-button" class="btn-js-cookie-accept">
-            Accept
-          </button>
+      <div id="cookie-banner">
+        <div class="cookieblock-wrapper">
+          <p>
+            We use <strong>cookies</strong> to improve your experience on our
+            site.
+          </p>
+          <div class="cookieblock-accept">
+            <button id="cookie-button" class="btn-js-cookie-accept">
+              Accept
+            </button>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!--  header -->
+      <!--  header -->
 
-    <header id="header">
-      <div class="store logo">
-        <a href="#main-page">
-          <img
-            id="header-img"
-            src="./assets/images/Logo-Plants-In-Pots.jpeg"
-            alt="store logo"
-          />
-        </a>
-      </div>
+      <header id="header">
+        <div class="store logo">
+          <a href="#main-page">
+            <img
+              id="header-img"
+              src="./assets/images/Logo-Plants-In-Pots.jpeg"
+              alt="store logo"
+            />
+          </a>
+        </div>
 
-      <nav id="nav-bar">
-        <!--  dropdown -->
+        <nav id="nav-bar">
+          <!--  dropdown -->
 
-        <div
-          class="dropdown"
-          onmouseout="hideOverlay()"
-          onmouseover="showOverlay()"
-        >
-          <a class="nav-link">Plants</a>
+          <div
+            class="dropdown"
+            onmouseout="hideOverlay()"
+            onmouseover="showOverlay()"
+          >
+            <a class="nav-link">Plants</a>
 
-          <div class="dropdown-content">
-            <div class="dropdown-container">
-              <div class="all-category">
-                <a href="#plants">All Plants</a>
+            <div class="dropdown-content">
+              <div class="dropdown-container">
+                <div class="all-category">
+                  <a href="#plants">All Plants</a>
+                </div>
+
+                <div class="dropdown-links">
+                  <a href="#indoor-plants">Indoor plants</a>
+                  <a href="#outdoor-plants">Outdoor plants</a>
+                </div>
               </div>
 
-              <div class="dropdown-links">
-                <a href="#indoor-plants">Indoor plants</a>
-                <a href="#outdoor-plants">Outdoor plants</a>
+              <div>
+                <img
+                  src="./assets/images/kyaw-tun-ntOxPce8R5c-unsplash.jpg"
+                  alt="plant in a pot"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            class="dropdown"
+            onmouseout="hideOverlay()"
+            onmouseover="showOverlay()"
+          >
+            <a class="nav-link">Pots</a>
+            <div class="dropdown-content">
+              <div class="dropdown-container">
+                <div class="all-category">
+                  <a href="#pots">All Pots</a>
+                </div>
+                <div class="dropdown-links">
+                  <a href="#indoor-pots">Indoor Pots</a>
+                  <a href="#outdoor-pots">Ourdoor Pots</a>
+                </div>
+              </div>
+              <img
+                src="./assets/images/ergita-sela-QSaF663v8uk-unsplash-2.jpg"
+                alt="ceramic pot"
+              />
+              <!-- end of dropdown -->
+            </div>
+          </div>
+          <a class="nav-link" href="#about-us">About us</a>
+        </nav>
+
+        <div class="cart-btn">
+          <span class="nav-icon">
+            <i class="fas fa-cart-plus"></i>
+          </span>
+          <div class="cart-items">0</div>
+        </div>
+      </header>
+
+      <div class="container">
+        <div id="overlay">
+          <!--  main page -->
+
+          <section id="main-page">
+            <!--  felx-box 1 -->
+
+            <div class="box-one" id="box-one">
+              <h1 id="animate">Greenify your space</h1>
+
+              <div class="link-box">
+                <a class="shop-button" href="#plants">Shop plants</a>
+                <a class="shop-button" href="#pots">Shop pots</a>
               </div>
             </div>
 
-            <div>
+            <!--  felx-box 2 -->
+
+            <div class="box-two" id="box-two">
               <img
-                src="./assets/images/kyaw-tun-ntOxPce8R5c-unsplash.jpg"
-                alt="plant in a pot"
+                src="./assets/images/severin-candrian-unsplash.jpg"
+                alt="Selection of plants"
+              />
+              <img
+                src="./assets/images/header_img2-unsplash.jpg"
+                alt="Selection of plants"
+              />
+              <img
+                src="./assets/images/header_img3-unsplash.jpg"
+                alt="Selection of plants"
+              />
+              <img
+                src="./assets/images/header_img4-unsplash.jpg"
+                alt="Selection of plants"
+              />
+              <img
+                src="./assets/images/header_img6-unsplash.jpg"
+                alt="Selection of plants"
+              />
+              <img
+                src="./assets/images/header_img7-unsplash.jpg"
+                alt="Selection of plants"
               />
             </div>
-          </div>
-        </div>
-        <div
-          class="dropdown"
-          onmouseout="hideOverlay()"
-          onmouseover="showOverlay()"
-        >
-          <a class="nav-link">Pots</a>
-          <div class="dropdown-content">
-            <div class="dropdown-container">
-              <div class="all-category">
-                <a href="#pots">All Pots</a>
-              </div>
-              <div class="dropdown-links">
-                <a href="#indoor-pots">Indoor Pots</a>
-                <a href="#outdoor-pots">Ourdoor Pots</a>
-              </div>
+          </section>
+
+          <!--  plants section -->
+
+          <section id="plants">
+            <h2>Discover our plants</h2>
+            <h3 id="indoor-plants">Indoor Plants</h3>
+            <div class="grid-plants plants-products-center">
+              <!-- indoor plants automatically populated -->
             </div>
-            <img
-              src="./assets/images/ergita-sela-QSaF663v8uk-unsplash-2.jpg"
-              alt="ceramic pot"
-            />
-            <!-- end of dropdown -->
-          </div>
-        </div>
-        <a class="nav-link" href="#about-us">About us</a>
-      </nav>
-
-      <div class="cart-btn">
-        <span class="nav-icon">
-          <i class="fas fa-cart-plus"></i>
-        </span>
-        <div class="cart-items">0</div>
-      </div>
-    </header>
-
-    <div class="container">
-      <div id="overlay">
-        <!--  main page -->
-
-        <section id="main-page">
-          <!--  felx-box 1 -->
-
-          <div class="box-one" id="box-one">
-            <h1 id="animate">Greenify your space</h1>
-
-            <div class="link-box">
-              <a class="shop-button" href="#plants">Shop plants</a>
-              <a class="shop-button" href="#pots">Shop pots</a>
+            <h3 id="outdoor-plants">Ourdoor Plants</h3>
+            <div class="grid-plants out-plants-products-center">
+              <!-- oudoor plants automatically populated -->
             </div>
-          </div>
+            <a href="#">All plants</a>
+          </section>
+          <!-- end of plants section -->
 
-          <!--  felx-box 2 -->
+          <!--  pots section -->
 
-          <div class="box-two" id="box-two">
-            <img
-              src="./assets/images/severin-candrian-unsplash.jpg"
-              alt="Selection of plants"
-            />
-            <img
-              src="./assets/images/header_img2-unsplash.jpg"
-              alt="Selection of plants"
-            />
-            <img
-              src="./assets/images/header_img3-unsplash.jpg"
-              alt="Selection of plants"
-            />
-            <img
-              src="./assets/images/header_img4-unsplash.jpg"
-              alt="Selection of plants"
-            />
-            <img
-              src="./assets/images/header_img6-unsplash.jpg"
-              alt="Selection of plants"
-            />
-            <img
-              src="./assets/images/header_img7-unsplash.jpg"
-              alt="Selection of plants"
-            />
-          </div>
-        </section>
+          <section id="pots">
+            <h2>Discover our pots</h2>
+            <h3 id="indoor-pots">Indoor Pots</h3>
+            <div class="grid-pots pots-products-center">
+              <!-- automatically populated -->
+            </div>
+            <h3 id="outdoor-pots">Outdoor Pots</h3>
+            <div class="grid-pots out-pots-products-center">
+              <!-- automatically populated -->
+            </div>
+            <a href="#">All pots</a>
+          </section>
+          <!--  end of pots section -->
 
-        <!--  plants section -->
+          <!-- cart -->
 
-        <section id="plants">
-          <h2>Discover our plants</h2>
-          <h3 id="indoor-plants">Indoor Plants</h3>
-          <div class="grid-plants plants-products-center">
-            <!-- indoor plants automatically populated -->
-          </div>
-          <h3 id="outdoor-plants">Ourdoor Plants</h3>
-          <div class="grid-plants out-plants-products-center">
-            <!-- oudoor plants automatically populated -->
-          </div>
-          <a href="#">All plants</a>
-        </section>
-        <!-- end of plants section -->
-
-        <!--  pots section -->
-
-        <section id="pots">
-          <h2>Discover our pots</h2>
-          <h3 id="indoor-pots">Indoor Pots</h3>
-          <div class="grid-pots pots-products-center">
-            <!-- automatically populated -->
-          </div>
-          <h3 id="outdoor-pots">Outdoor Pots</h3>
-          <div class="grid-pots out-pots-products-center">
-            <!-- automatically populated -->
-          </div>
-          <a href="#">All pots</a>
-        </section>
-        <!--  end of pots section -->
-
-        <!-- cart -->
-
-        <div class="cart-overlay">
-          <div class="cart">
-            <span class="close-cart">
-              <i class="fas fa-window-close"></i>
-            </span>
-            <h2 id="your-bag">Your bag</h2>
-            <!-- 
+          <div class="cart-overlay">
+            <div class="cart">
+              <span class="close-cart">
+                <i class="fas fa-window-close"></i>
+              </span>
+              <h2 id="your-bag">Your bag</h2>
+              <!-- 
             <div class="bag-plant">
               <img src="./assets/images/icons8-potted-plant-100.png" />
             </div>
             -->
-            <div class="cart-content">
-              <!-- cart item -->
+              <div class="cart-content">
+                <!-- cart item -->
 
-              <!-- <div class="cart-item"> -->
+                <!-- <div class="cart-item"> -->
 
-              <!-- </div> -->
+                <!-- </div> -->
 
-              <!-- end of cart item-->
-            </div>
+                <!-- end of cart item-->
+              </div>
 
-            <div class="cart-footer">
-              <h3>Total: $<span class="cart-total">0</span></h3>
-              <button class="btn clear-cart">remove all</button>
-            </div>
-          </div>
-        </div>
-        <!-- end of cart  -->
-
-        <!--  delivery banner -->
-
-        <div class="delivery-banner">
-          <img
-            alt="delivery icon"
-            src="./assets/images/icons8-delivery-100.png"
-          />
-          <p class="delivery">Free delivery on orders over $50</p>
-        </div>
-        <!-- end of delivery banner -->
-
-        <!--  newsletter -->
-
-        <section id="newsletter">
-          <div class="submit-form">
-            <div>
-              <h2>Your plants keep dying?</h2>
-              <h3>
-                Sign up to our newsletter to learn how to keep them alive!
-              </h3>
-              <form
-                id="form"
-                action="https://www.freecodecamp.com/email-submit"
-              >
-                <input
-                  id="email"
-                  type="email"
-                  name="email"
-                  class="user-input"
-                  placeholder="Enter your email address"
-                />
-                <input type="submit" id="submit" />
-              </form>
+              <div class="cart-footer">
+                <h3>Total: $<span class="cart-total">0</span></h3>
+                <button class="btn clear-cart">remove all</button>
+              </div>
             </div>
           </div>
-        </section>
-        <!--  end of newsletter -->
+          <!-- end of cart  -->
 
-        <!--  About us -->
+          <!--  delivery banner -->
 
-        <section id="about-us">
-          <h2>Why us?</h2>
-          <div class="why-us-container">
-            <div class="why-us-box">
-              <img
-                src="./assets/images/icons8-quality-96.png"
-                alt="quality icon"
-              />
-              <p>
-                We source directly from top-rated growers which enusres
-                unbeatable qualit.
-              </p>
-            </div>
-            <div class="why-us-box">
-              <img
-                src="./assets/images/icons8-fast-download-96.png"
-                alt="clock icon"
-              />
-              <p>
-                All plants are shipped within 24 hours and we deliver them to
-                your door 7 days a week.
-              </p>
-            </div>
-            <div class="why-us-box">
-              <img src="./assets/images/icons8-chat-100.png" alt="clock icon" />
-              <p>
-                If you have any questions, please
-                <a
-                  href="mailto:testing@plantstore.com"
-                  target="_blank"
-                  class="email-us"
-                  >email us</a
+          <div class="delivery-banner">
+            <img
+              alt="delivery icon"
+              src="./assets/images/icons8-delivery-100.png"
+            />
+            <p class="delivery">Free delivery on orders over $50</p>
+          </div>
+          <!-- end of delivery banner -->
+
+          <!--  newsletter -->
+
+          <section id="newsletter">
+            <div class="submit-form">
+              <div>
+                <h2>Your plants keep dying?</h2>
+                <h3>
+                  Sign up to our newsletter to learn how to keep them alive!
+                </h3>
+                <form
+                  id="form"
+                  action="https://www.freecodecamp.com/email-submit"
                 >
-                and we'll get back to you as soon as we can.
-              </p>
+                  <input
+                    id="email"
+                    type="email"
+                    name="email"
+                    class="user-input"
+                    placeholder="Enter your email address"
+                  />
+                  <input type="submit" id="submit" />
+                </form>
+              </div>
             </div>
+          </section>
+          <!--  end of newsletter -->
+
+          <!--  About us -->
+
+          <section id="about-us">
+            <h2>Why us?</h2>
+            <div class="why-us-container">
+              <div class="why-us-box">
+                <img
+                  src="./assets/images/icons8-quality-96.png"
+                  alt="quality icon"
+                />
+                <p>
+                  We source directly from top-rated growers which enusres
+                  unbeatable qualit.
+                </p>
+              </div>
+              <div class="why-us-box">
+                <img
+                  src="./assets/images/icons8-fast-download-96.png"
+                  alt="clock icon"
+                />
+                <p>
+                  All plants are shipped within 24 hours and we deliver them to
+                  your door 7 days a week.
+                </p>
+              </div>
+              <div class="why-us-box">
+                <img
+                  src="./assets/images/icons8-chat-100.png"
+                  alt="clock icon"
+                />
+                <p>
+                  If you have any questions, please
+                  <a
+                    href="mailto:testing@plantstore.com"
+                    target="_blank"
+                    class="email-us"
+                    >email us</a
+                  >
+                  and we'll get back to you as soon as we can.
+                </p>
+              </div>
+            </div>
+          </section>
+          <!--  end of About us -->
+
+          <div>
+            <!--  footer -->
+
+            <footer>
+              <ul>
+                <li><a href="#about-us">Privacy</a></li>
+                <li><a href="#about-us">Contact</a></li>
+                <li><a href="#about-us">Customer Service</a></li>
+              </ul>
+            </footer>
           </div>
-        </section>
-        <!--  end of About us -->
-
-        <div>
-          <!--  footer -->
-
-          <footer>
-            <ul>
-              <li><a href="#about-us">Privacy</a></li>
-              <li><a href="#about-us">Contact</a></li>
-              <li><a href="#about-us">Customer Service</a></li>
-            </ul>
-          </footer>
         </div>
       </div>
     </div>

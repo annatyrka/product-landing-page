@@ -495,9 +495,8 @@ function dismiss() {
     const cookieBanner = document.getElementById("cookie-banner");
 
     cookieBanner.style.transform = "translateY(-90px)";
-    document.getElementsByTagName("header")[0].style.top = "0";
-
-    setTimeout(function () { cookieBanner.remove() }, 3000);
+    document.getElementsByTagName("header")[0].style.transform = "translateY(0px)";
+    setTimeout(function () { cookieBanner.remove() }, 2000);
 }
 
 // Assign an onclick event
@@ -510,7 +509,7 @@ document.getElementById("cookie-button").onclick = dismiss;
 function loadCookies() {
 
     const cookieBanner = document.getElementById("cookie-banner");
-    document.getElementsByTagName("header")[0].style.top = "90px";
+    document.getElementsByTagName("header")[0].style.transform = "translateY(90px)";
 
 }
 

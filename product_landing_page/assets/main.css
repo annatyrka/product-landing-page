@@ -18,16 +18,23 @@ html {
 }
 
 body {
-  background-color: var(--light-green);
   font-family: "Lato", sans-serif;
   color: var(--dark-grey);
+  background-color: var(--light-green);
 }
 
+.wrapper {
+  max-width: 1350px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: var(--faded-green);
+}
 /*-------- cookie banner --------*/
 
 #cookie-banner {
   position: fixed;
   top: 0;
+  max-width: 1350px;
   width: 100%;
   height: 90px;
   background-color: var(--green-button);
@@ -92,7 +99,9 @@ header {
   background-color: white;
   font-size: 1.15rem;
   width: 100%;
-  transition: top 1s;
+  max-width: 1350px;
+  transform: translateY(0);
+  transition: transform 1s;
   transition-delay: 0.5s;
   box-shadow: 0 0.0625rem 0.25rem 0 rgba(61, 66, 80, 0.18);
 }
@@ -751,21 +760,26 @@ footer li {
     font-size: 3.25rem;
   }
 
+  #cookie-banner {
+    max-height: 18rem;
+  }
   header {
-    max-height: 17rem;
-    font-size: 2.25rem;
-    padding: 0rem;
-    justify-content: space-between;
+    max-height: 18rem;
+    font-size: 2.5rem;
+    padding: 1rem;
+    justify-content: space-around;
     white-space: nowrap;
   }
-
+  header a {
+    padding-left: 0;
+  }
   img[id="header-img"] {
     height: 11rem;
     width: auto;
   }
 
   .logo {
-    margin: 0;
+    margin-left: 0;
   }
 
   .container {
@@ -785,7 +799,9 @@ footer li {
   .box-one {
     position: absolute;
     top: 50vh;
-    width: max-content;
+    padding: 0;
+    max-width: 700px;
+    width: 100%;
   }
 
   .link-box {
@@ -804,6 +820,7 @@ footer li {
     font-size: 3.25rem;
     padding: 1.75rem;
     line-height: 5rem;
+    max-width: 700px;
     width: 100%;
   }
 
@@ -818,7 +835,9 @@ footer li {
     right: 0;
     text-align: center;
   }
-
+  #plants {
+    padding-top: 0.5rem;
+  }
   .grid-plants,
   .grid-pots {
     flex-direction: column;
@@ -829,14 +848,18 @@ footer li {
 
   .plant,
   .pot {
-    font-size: 2.25rem;
+    font-size: 2.5rem;
     line-height: 3rem;
     min-width: 80%;
     padding-top: 50px;
     padding-bottom: 50px;
     align-items: center;
   }
-
+  .plant h4,
+  .pot h4 {
+    font-size: 3rem;
+    padding: 0.75rem;
+  }
   .crossfade {
     margin: 0 auto;
     height: 800px;
@@ -864,17 +887,17 @@ footer li {
     padding: 10px 0;
   }
   .description {
-    height: 10.5rem;
+    height: 13.5rem;
   }
   .bag-btn {
     display: flex;
     justify-content: center;
     align-items: center;
     line-height: 3.5rem;
-    height: 4rem;
+    height: 4.5rem;
     width: 100%;
     font-size: 2rem;
-    max-width: 20rem;
+    max-width: 25rem;
     margin-bottom: 30px;
   }
 
