@@ -24,17 +24,16 @@ body {
 }
 
 .wrapper {
-  max-width: 1350px;
+  max-width: 1650px;
   width: 100%;
   margin: 0 auto;
-  background-color: var(--faded-green);
 }
 /*-------- cookie banner --------*/
 
 #cookie-banner {
   position: fixed;
   top: 0;
-  max-width: 1350px;
+  max-width: 1650px;
   width: 100%;
   height: 90px;
   background-color: var(--green-button);
@@ -99,7 +98,7 @@ header {
   background-color: white;
   font-size: 1.15rem;
   width: 100%;
-  max-width: 1350px;
+  max-width: 1650px;
   transform: translateY(0);
   transition: transform 1s;
   transition-delay: 0.5s;
@@ -134,6 +133,7 @@ nav {
   opacity: 0;
   white-space: nowrap;
   transition: 0.5s ease-out;
+  max-width: 1650px;
 }
 .dropdown-content img {
   height: 250px;
@@ -204,6 +204,7 @@ nav {
   position: relative;
   top: 90px;
   width: 100%;
+  background-color: var(--light-green);
 }
 
 #overlay {
@@ -251,6 +252,7 @@ h4 {
   height: calc(100vh - 90px);
   flex-direction: row;
   width: 100%;
+  background-color: var(--light-green);
 }
 
 .box-one {
@@ -360,6 +362,9 @@ h4 {
   background-color: var(--faded-green);
 }
 
+#pots {
+  background-color: var(--light-green);
+}
 .plant,
 .pot {
   border: solid 1px var(--darker-green);
