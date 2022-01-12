@@ -9,6 +9,7 @@ html {
 }
 
 :root {
+  --main-beige: hsl(0, 0%, 97%);
   --faded-green: #fefefe;
   --light-green: #ebf1f0;
   --darker-green: #78928c;
@@ -20,7 +21,7 @@ html {
 body {
   font-family: "Lato", sans-serif;
   color: var(--dark-grey);
-  background-color: var(--light-green);
+  background-color: var(--main-beige);
 }
 
 .wrapper {
@@ -48,26 +49,22 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: 2rem 2rem;
-  padding: 0 3rem;
+  justify-content: flex-start;
+  margin-left: 2rem;
+  padding: 2rem;
+  height: 100%;
 }
 
-.btn-js-cookie-accept {
-  background-color: var(--light-green);
-  border: none;
-  display: block;
-  margin-left: 3rem;
-  min-width: 120px;
-  font-size: 1.25rem;
-  min-height: 30px;
-  font-size: inherit;
-  text-transform: capitalize;
-  border-radius: 5px;
-  text-align: center;
+.close-cookies {
+  color: var(--light-green);
+  margin: 0 2.5rem;
+  font-size: 1.5rem;
 }
 
-.btn-js-cookie-accept:hover {
+.close-cookies:hover {
   cursor: pointer;
+  color: var(--faded-green);
+  transition: color 0.5s ease-in;
 }
 
 /*-------- header --------*/
@@ -188,16 +185,18 @@ nav {
   margin-left: auto;
   margin-right: 75px;
   position: relative;
+  font-size: 25px;
 }
 
 .cart-items {
   position: absolute;
-  top: -10px;
-  left: 15px;
+  top: -12.5px;
+  left: 17.5px;
   background-color: var(--green-hover);
   border-radius: 30%;
   padding: 0 5px;
   color: var(--faded-green);
+  font-size: 1.25rem;
 }
 /*-------- content --------*/
 .container {
@@ -403,7 +402,7 @@ h4 {
 #pots a {
   display: inline-block;
   color: var(--green-button);
-  font-size: 1.75rem;
+  font-size: 3.75rem;
   padding: 0.75rem 0;
   margin: 0.75rem 0;
   text-decoration: none;
@@ -412,8 +411,8 @@ h4 {
 #plants h3,
 #pots h3 {
   font-size: 1.75rem;
-  display: inline-block;
-  max-width: 74.5rem;
+  max-width: 75rem;
+  margin: 0 auto;
   width: 100%;
   border-radius: 10px;
 }
@@ -477,7 +476,7 @@ h4 {
   min-width: 175px;
   font-size: 1rem;
   font-weight: 500;
-  min-height: 2.25rem;
+  height: 2.25rem;
   text-transform: uppercase;
   color: white;
   border-radius: 5px;
@@ -523,6 +522,11 @@ h4 {
   transition: transform 0.5s linear;
 }
 
+@media (min-width: 1650px) {
+  .cart {
+    right: calc((100vw - 1650px) * 0.5);
+  }
+}
 @media screen and (min-width: 768px) {
   .cart {
     width: 30vw;
@@ -531,7 +535,7 @@ h4 {
 }
 
 .close-cart {
-  font-size: 1.7rem;
+  font-size: 2rem;
   cursor: pointer;
   color: black;
 }
@@ -683,7 +687,6 @@ h4 {
   padding: 1rem;
   margin: auto;
   border: none;
-  border-radius: 10px;
   cursor: pointer;
   font-size: 1.1rem;
   max-width: 400px;
@@ -699,19 +702,24 @@ h4 {
 
 /*-------- About us --------*/
 #about-us {
-  margin: 2rem;
   text-align: center;
+  background-color: var(--light-green);
+}
+
+#about-us h2 {
+  margin: 0;
+  padding: 3.5rem 2rem;
 }
 
 .why-us-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 }
 
 .why-us-box {
   width: 30%;
-  margin: 2rem;
+  margin-bottom: 4rem;
   font-size: 1.25rem;
 }
 
@@ -731,10 +739,9 @@ h4 {
 
 footer {
   display: flex;
-  position: relative;
-  top: 75px;
   justify-content: flex-end;
   background-color: white;
+  align-items: center;
   padding: 0 50px;
   text-decoration: none;
 }
@@ -750,36 +757,41 @@ footer > ul {
 
 footer li {
   list-style: none;
+  font-size: 1.25rem;
 }
 
-@media only screen and (max-device-width: 576px) {
-  h1 {
-    font-size: 5rem;
-  }
-
-  h2 {
-    font-size: 4.25rem;
-    margin: 2.5rem;
-  }
-  h3 {
-    font-size: 3.25rem;
-  }
+@media (max-device-width: 576px) {
+  /*-------- cookie banner --------*/
 
   #cookie-banner {
-    max-height: 18rem;
+    max-width: 100vw;
+    height: 90px;
   }
-  header {
-    max-height: 18rem;
-    font-size: 2.5rem;
-    padding: 1rem;
+
+  .cookieblock-wrapper {
+    display: flex;
     justify-content: space-around;
-    white-space: nowrap;
+    align-items: center;
+    padding: 1.5rem;
+    margin-left: 0;
   }
+
+  /*-------- navbar --------*/
+
+  header {
+    max-width: 100vw;
+  }
+
+  nav {
+    flex-direction: column;
+  }
+
   header a {
     padding-left: 0;
+    font-size: smaller;
   }
   img[id="header-img"] {
-    height: 11rem;
+    height: 5rem;
     width: auto;
   }
 
@@ -787,179 +799,205 @@ footer li {
     margin-left: 0;
   }
 
-  .container {
-    top: 11rem;
-    bottom: 15rem;
-  }
-
   /*-------- main page --------*/
 
+  h1 {
+    font-size: 2.25rem;
+    margin: 1rem 0;
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin: 1rem 0.5rem;
+  }
+  h3 {
+    font-size: 1.75rem;
+    padding: 1rem;
+  }
+
   #main-page {
-    display: flex;
     align-items: center;
-    height: 100vh;
-    flex-direction: column;
+    height: calc(100vh - 5rem);
+    flex-direction: column-reverse;
   }
 
   .box-one {
-    position: absolute;
-    top: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 0;
-    max-width: 700px;
-    width: 100%;
+    width: 100vw;
+    margin: 0;
+    height: 50%;
+    text-align: center;
+  }
+
+  .box-two {
+    width: 100vw;
+    height: 50%;
   }
 
   .link-box {
-    font-size: 1.75rem;
     display: flex;
     flex-direction: column;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
+    justify-content: center;
+    align-items: center;
     text-align: center;
   }
 
   .shop-button {
-    margin: 1.25rem;
-    font-size: 3.25rem;
-    padding: 1.75rem;
-    line-height: 5rem;
-    max-width: 700px;
-    width: 100%;
+    margin: 0.5rem;
+    font-size: 1.25rem;
+    padding: 1rem;
+    width: 275px;
   }
 
-  .box-two {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 40vh;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-    text-align: center;
+  /*-------- plants section --------*/
+
+  #plants h3,
+  #pots h3 {
+    border-radius: 0;
   }
-  #plants {
+  #plants,
+  #pots {
     padding-top: 0.5rem;
   }
   .grid-plants,
   .grid-pots {
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     width: 100%;
   }
 
   .plant,
   .pot {
-    font-size: 2.5rem;
-    line-height: 3rem;
-    min-width: 80%;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    max-width: 100%;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    justify-content: center;
     align-items: center;
+    border: none;
+    border-radius: none;
   }
   .plant h4,
   .pot h4 {
-    font-size: 3rem;
+    font-size: 1.5rem;
     padding: 0.75rem;
   }
   .crossfade {
-    margin: 0 auto;
-    height: 800px;
-    width: 700px;
+    height: 350px;
+    width: 300px;
   }
 
   .pot-img,
   .plant-img {
-    height: 800px;
-    width: 700px;
+    height: 325px;
+    width: 300px;
   }
 
   #plants a,
   #pots a {
-    font-size: 2.75rem;
-  }
-  #plants h3,
-  #pots h3 {
-    font-size: 3rem;
-    padding: 2.5rem 0;
-  }
-  .price {
-    font-size: 2rem;
-    font-weight: 900;
-    padding: 10px 0;
-  }
-  .description {
-    height: 13.5rem;
-  }
-  .bag-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    line-height: 3.5rem;
-    height: 4.5rem;
-    width: 100%;
-    font-size: 2rem;
-    max-width: 25rem;
-    margin-bottom: 30px;
+    font-size: 2.25rem;
   }
 
-  .plant p {
-    text-align: justify;
-    padding: 0.25em 1.75rem;
+  .price {
+    font-size: 1.75rem;
+    padding: 1rem;
   }
-  #newsletter {
-    height: 45vh;
-    background-size: cover;
+
+  .size {
+    font-size: 1.25rem;
+    padding: 0;
+  }
+
+  .description {
+    font-size: 1rem;
+    text-align: justify;
+    padding: 1rem 1.5rem;
+  }
+
+  .bag-btn {
+    width: 90%;
+    margin: 1.5rem;
+    font-size: 1.25rem;
+    height: 2.5rem;
+  }
+
+  /*-------- delivery banner --------*/
+
+  .delivery-banner {
+    font-size: 1.5rem;
+  }
+
+  .delivery-banner img {
+    height: 60px;
   }
 
   .delivery {
-    font-size: 2.75rem;
+    margin: 1rem;
+  }
+
+  /*-------- newsletter --------*/
+
+  #newsletter {
+    height: 75vh;
   }
 
   .submit-form {
-    margin: 4rem;
+    margin: 0rem;
+    border-radius: 0;
   }
   .submit-form h2 {
-    font-size: 2.75rem;
+    font-size: 1.75rem;
   }
   .submit-form h3 {
-    font-size: 2.25rem;
-    padding: 2rem 4rem;
+    font-size: 1.25rem;
+    padding: 1rem;
   }
 
   #newsletter input[type="email"] {
-    padding: 1.25rem;
-    font-size: 2rem;
-    max-width: 40rem;
-    height: 4rem;
-    width: 100%;
+    max-width: 90%;
   }
 
   #newsletter input[type="submit"] {
-    padding: 1.25rem;
-    font-size: 1.75rem;
-    max-width: 40rem;
-    width: 100%;
+    max-width: 90%;
+    border-radius: 0;
   }
+
+  #newsletter input[type="submit"]:hover {
+    background-color: var(--green-hover);
+    transition: 0.25s;
+  }
+
+  /*-------- About us --------*/
 
   .why-us-container {
     flex-direction: column;
-    margin: 1rem;
-    font-size: 1rem;
   }
+
   .why-us-box {
     width: 80%;
-    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-size: 1rem;
   }
+
+  .why-us-box img {
+    width: 60px;
+  }
+
+  /*-------- About us --------*/
   footer {
     justify-content: center;
-    align-items: center;
   }
   footer > ul {
-    font-size: 1.7rem;
     white-space: nowrap;
+    width: 100%;
+    margin: 1rem 0.5rem;
+  }
+
+  footer li {
+    font-size: 1rem;
   }
 }

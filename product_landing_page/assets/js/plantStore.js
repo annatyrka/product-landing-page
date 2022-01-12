@@ -501,7 +501,7 @@ function dismiss() {
 
 // Assign an onclick event
 
-document.getElementById("cookie-button").onclick = dismiss;
+document.querySelector('.close-cookies').onclick = dismiss;
 
 
 //Show cookies banner
