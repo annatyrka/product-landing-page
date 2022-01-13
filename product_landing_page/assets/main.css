@@ -834,11 +834,14 @@ footer li {
 
 @media (max-width: 768px) {
   header {
-    justify-content: space-between;
+    justify-content: space-evenly;
   }
 
+  .logo {
+    margin: 0;
+  }
   .cart-btn {
-    margin-left: 15px;
+    margin-left: 0;
     margin-right: 15px;
   }
 }
@@ -1026,10 +1029,13 @@ footer li {
   }
   .submit-form h2 {
     font-size: 1.5rem;
+    padding-right: 0.25rem;
+    padding-left: 0.25rem;
+    margin: 1rem 0;
   }
   .submit-form h3 {
     font-size: 1.15rem;
-    padding: 1rem;
+    padding: 0.25rem;
   }
 
   #newsletter input[type="email"] {
