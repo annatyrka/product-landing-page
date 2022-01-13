@@ -16,7 +16,7 @@
         {
             "sys": {"id":"2"},
             "fields":  {
-                "title": "ficus elastica 'robusta'",
+                "title": "ficus 'robusta'",
                 "price": 20,
                 "size": 25,
                 "description":"Looking for a green houseplant that is not demanding and grows rapidly? Say no more!",
@@ -56,7 +56,7 @@
             {
             "sys": {"id":"5"},
             "fields":  {
-                "title": "Lily 'Stargazer' Pink",
+                "title": "Lily 'Stargazer'",
                 "price": 24,
                 "size": 40,
                 "description":"The Lily ‘Stargazer’ Pink is just beautiful! It can be grown outdoors as a focal point in your garden or indoors as a potted plant.",
@@ -70,7 +70,7 @@
            {
             "sys": {"id":"6"},
             "fields":  {
-                "title": "Calamondin Orange Tree",
+                "title": "Orange Tree",
                 "price": 57,
                 "size": 80,
                 "description":"Grow your very own oranges with our Citrus Tree! These small shrubs will look amazing both inside and outside your home.",

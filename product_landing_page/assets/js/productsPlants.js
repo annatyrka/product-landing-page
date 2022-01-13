@@ -43,7 +43,6 @@ displayPlantProducts(plantsProducts) {
                 src="${plantsProducts.imageTop}"
                 alt="plant"
               />
-
               <h3>${plantsProducts.title}</h3>
               <p>
                 ${plantsProducts.description}

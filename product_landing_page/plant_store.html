@@ -5,9 +5,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/main.css" type="text/css" />
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap");
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap" rel="stylesheet">
     <script
       src="https://kit.fontawesome.com/b267fde2a0.js"
       crossorigin="anonymous"
@@ -32,6 +32,11 @@
       <!--  header -->
 
       <header id="header">
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
         <div class="store logo">
           <a href="#main-page">
             <img
@@ -48,7 +53,7 @@
           <div
             class="dropdown"
             onmouseout="hideOverlay()"
-            onmouseover="showOverlay()"
+            onmouseover="showOverlay(windowWidth)"
           >
             <a class="nav-link">Plants</a>
 
@@ -75,7 +80,7 @@
           <div
             class="dropdown"
             onmouseout="hideOverlay()"
-            onmouseover="showOverlay()"
+            onmouseover="showOverlay(windowWidth)"
           >
             <a class="nav-link">Pots</a>
             <div class="dropdown-content">
@@ -96,6 +101,7 @@
             </div>
           </div>
           <a class="nav-link" href="#about-us">About us</a>
+  
         </nav>
 
         <div class="cart-btn">
@@ -313,5 +319,6 @@
       </div>
     </div>
     <script type="text/javascript" src="./assets/js/plantStore.js"></script>
+    <script type="text/javascript" src="./assets/js/hamburgerMenu.js"></script>
   </body>
 </html>

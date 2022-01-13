@@ -103,9 +103,11 @@ displayProducts(products) {
              />
 
             </div>
+            <div class="item-details">
               <h4>${product.title}</h4>
               <p class="size">Size: ${product.size} cm </p>
               <p class="price">$${product.price}</p>
+              </div>
               <button class="bag-btn" data-id=${product.id}>
                 <img src="./assets/images/icons8-bag-48.png" />add
               </button>
@@ -130,9 +132,11 @@ displayProducts(products) {
              />
 
             </div>
+            <div class="item-details">
               <h4>${product.title}</h4>
               <p class="size">Size: ${product.size} cm </p>
               <p class="price">$${product.price}</p>
+              </div>
               <button class="bag-btn" data-id=${product.id}>
                 <img src="./assets/images/icons8-bag-48.png" />add
               </button>
@@ -170,11 +174,12 @@ displayPlantsProducts(plantsProducts) {
                 class="plant-img top"
               />
             </div>
+            <div class="item-details">
               <h4>${product.title}</h4>
               <p class="size">Size: ${product.size} cm </p>
               <p class="price">$${product.price}</p>
-               <p class="description">${product.description}
               </p>
+              </div>
               <button class="bag-btn" data-id="${product.id}">
                 <img src="./assets/images/icons8-bag-48.png" />add
               </button>
@@ -200,11 +205,12 @@ displayPlantsProducts(plantsProducts) {
                 class="plant-img top"
               />
             </div>
+            <div class="item-details">
               <h4>${product.title}</h4>
               <p class="size">Size: ${product.size} cm </p>
               <p class="price">$${product.price}</p>
-               <p class="description">${product.description}
               </p>
+              </div>
               <button class="bag-btn" data-id="${product.id}">
                 <img src="./assets/images/icons8-bag-48.png" />add
               </button>
@@ -516,15 +522,22 @@ function loadCookies() {
 // show / hide overlay
 
 let overlay = document.getElementById("overlay");
+const windowWidth = window.matchMedia("(min-width: 768px)");
 
-function showOverlay() {
+
+function showOverlay(width) {
+  if (width.matches) {
     overlay.style.zIndex = 0;
     overlay.style.opacity = 0.4;
-}
+  } else {
+    overlay.style.zIndex = -2;
+    overlay.style.opacity = 1;
+  }
+};
 
 function hideOverlay() {
     overlay.style.zIndex = -2;
     overlay.style.opacity = 1;
-}
+};
 
 
