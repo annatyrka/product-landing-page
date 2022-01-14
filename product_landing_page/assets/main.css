@@ -132,7 +132,7 @@ nav {
 
 /*-------- Hamburger menu --------*/
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 767px) {
   #nav-bar {
     position: fixed;
     left: -100%;
@@ -149,7 +149,8 @@ nav {
     left: 0;
   }
   .nav-link {
-    margin: 0;
+    margin-left: 0.75rem;
+    font-size: 1.25rem;
   }
   .hamburger {
     display: block;
@@ -234,7 +235,7 @@ nav {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  width: 40%;
+  margin-left: 1rem;
 }
 
 .cart-btn {
@@ -467,7 +468,7 @@ h4 {
 #pots a {
   display: inline-block;
   color: var(--green-button);
-  font-size: 2.25rem;
+  font-size: 1.75rem;
   padding: 0.5rem 0;
   margin: 1.5rem;
   text-decoration: none;
@@ -739,7 +740,7 @@ h4 {
 }
 .submit-form h2 {
   margin-top: 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0rem;
 }
 
 #newsletter input[type="email"] {
@@ -816,6 +817,7 @@ footer {
   align-items: center;
   padding: 0 50px;
   text-decoration: none;
+  height: 80px;
 }
 
 footer > ul {
@@ -823,13 +825,61 @@ footer > ul {
   justify-content: space-around;
   align-items: center;
   flex-direction: row;
-  padding: 2vw;
-  width: 40vw;
 }
 
 footer li {
   list-style: none;
   font-size: 1.25rem;
+}
+
+@media (orientation: portrait) and (max-width: 1023px) {
+  /*-------- main page --------*/
+
+  h1 {
+    font-size: 2rem;
+    margin: 1.5rem 0.5rem;
+  }
+
+  .container {
+    top: 5rem;
+  }
+
+  #main-page {
+    align-items: center;
+    flex-direction: column-reverse;
+  }
+
+  .box-one {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    width: 100vw;
+    margin: 0;
+    height: 55%;
+    text-align: center;
+  }
+
+  .box-two {
+    width: 100vw;
+    height: 45%;
+  }
+
+  .link-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0.5rem 0;
+  }
+
+  .shop-button {
+    margin: 0.5rem;
+    font-size: 1.25rem;
+    padding: 1rem;
+    width: 275px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -885,58 +935,17 @@ footer li {
     margin-left: 0;
   }
 
-  /*-------- main page --------*/
-
-  h1 {
-    font-size: 2rem;
-    margin: 1.5rem 0.5rem;
-  }
-
   h2 {
-    font-size: 2rem;
+    font-size: 1.75rem;
   }
   h3 {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     padding: 1rem;
   }
 
-  #main-page {
-    align-items: center;
-    flex-direction: column-reverse;
+  .cart {
+    top: 5rem;
   }
-
-  .box-one {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0;
-    width: 100vw;
-    margin: 0;
-    height: 55%;
-    text-align: center;
-  }
-
-  .box-two {
-    width: 100vw;
-    height: 45%;
-  }
-
-  .link-box {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin: 0.5rem 0;
-  }
-
-  .shop-button {
-    margin: 0.5rem;
-    font-size: 1.25rem;
-    padding: 1rem;
-    width: 275px;
-  }
-
   /*-------- plants section --------*/
 
   #plants h3,
@@ -1020,12 +1029,13 @@ footer li {
   /*-------- newsletter --------*/
 
   #newsletter {
-    height: 75vh;
+    height: auto;
   }
 
   .submit-form {
     margin: 0rem;
     border-radius: 0;
+    bottom: 0;
   }
   .submit-form h2 {
     font-size: 1.5rem;
@@ -1071,6 +1081,7 @@ footer li {
   /*-------- About us --------*/
   footer {
     justify-content: center;
+    padding: 0 5px;
   }
   footer > ul {
     white-space: nowrap;
@@ -1080,6 +1091,9 @@ footer li {
 
   footer li {
     font-size: 1rem;
+  }
+  footer a {
+    padding: 0.25rem;
   }
 }
 
@@ -1113,5 +1127,22 @@ footer li {
   }
   footer li {
     white-space: pre-wrap;
+    margin: 0.25rem 0;
+    font-size: 1rem;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 1000px) {
+  #main-page {
+    height: auto;
+  }
+
+  #newsletter {
+    height: auto;
+  }
+
+  .submit-form {
+    bottom: 0;
+    margin: 2rem 1rem;
   }
 }
