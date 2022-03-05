@@ -13,7 +13,9 @@ html {
   --faded-green: #fefefe;
   --light-green: #ebf1f0;
   --darker-green: #78928c;
-  --green-hover: hsla(165, 40%, 50%, 0.8);
+  --green-hover: #26a399;
+  /* --green-hover: hsla(165, 40%, 50%, 0.8); */
+
   --green-button: #20847c;
   --dark-grey: hsla(0, 0%, 0%, 0.8);
 }
@@ -281,17 +283,19 @@ nav {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 2.75rem;
   margin-bottom: 2.25rem;
 }
 
 h2 {
-  font-size: 2.25rem;
-  padding: 1.5rem;
+  font-size: 1.75rem;
+  padding: 2rem 1rem 3rem 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 h3 {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   text-align: center;
   padding: 1.25rem;
 }
@@ -307,7 +311,7 @@ h4 {
   display: flex;
   align-items: stretch;
   justify-content: stretch;
-  height: calc(100vh - 90px);
+  height: calc(100vh - 80px);
   flex-direction: row;
   width: 100%;
   background-color: var(--light-green);
@@ -423,6 +427,7 @@ h4 {
 #pots,
 #plants {
   text-align: center;
+  padding: 1rem 0;
 }
 
 #plants {
@@ -476,11 +481,13 @@ h4 {
 
 #plants h3,
 #pots h3 {
-  font-size: 1.75rem;
-  max-width: 75rem;
+  font-size: 1.25rem;
+  max-width: 80%;
   margin: 0 auto;
   width: 100%;
   border-radius: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 #plants h3 {
@@ -509,11 +516,6 @@ h4 {
 .plant:hover,
 .pot:hover {
   cursor: pointer;
-}
-
-#plants a:hover,
-#pots a:hover {
-  border-bottom: 2px solid var(--green-button);
 }
 
 .item-details {
@@ -731,16 +733,21 @@ h4 {
   display: flex;
   position: relative;
   bottom: 75px;
-  padding: 0 30px 30px 30px;
+  padding: 0 30px 50px 30px;
   align-items: center;
   justify-content: center;
   border-color: var(--green-button);
   background-color: rgba(255, 255, 255, 0.7);
-  border-radius: 5px;
+  border-radius: 15px;
+  width: 600px;
 }
-.submit-form h2 {
+.submit-form h3 {
   margin-top: 2rem;
-  margin-bottom: 0rem;
+  font-size: 2rem;
+}
+.submit-form p {
+  font-size: 1.25rem;
+  margin-bottom: 30px;
 }
 
 #newsletter input[type="email"] {
@@ -880,6 +887,10 @@ footer li {
     padding: 1rem;
     width: 275px;
   }
+  #plants h3,
+  #pots h3 {
+    max-width: 90%;
+  }
 }
 
 @media (max-width: 768px) {
@@ -936,10 +947,10 @@ footer li {
   }
 
   h2 {
-    font-size: 1.75rem;
+    font-size: 1.25rem;
   }
   h3 {
-    font-size: 1.5rem;
+    font-size: 1.125rem;
     padding: 1rem;
   }
 
@@ -952,6 +963,7 @@ footer li {
   #pots h3 {
     border-radius: 0;
     padding: 1rem 0.5rem;
+    max-width: 80%;
   }
 
   .grid-plants,
@@ -1036,14 +1048,15 @@ footer li {
     margin: 0rem;
     border-radius: 0;
     bottom: 0;
+    width: auto;
   }
-  .submit-form h2 {
+  .submit-form h3 {
     font-size: 1.5rem;
     padding-right: 0.25rem;
     padding-left: 0.25rem;
     margin: 1rem 0;
   }
-  .submit-form h3 {
+  .submit-form p {
     font-size: 1.15rem;
     padding: 0.25rem;
   }
