@@ -479,20 +479,6 @@ ui.getBagButtons()}).then(() => { ui.cartLogic() }).then(() => {ui.bagIsEmpty()}
 
 
 
-// dismiss cookies banner
-
-function dismiss() {
-    const cookieBanner = document.getElementById("cookie-banner");
-
-    cookieBanner.style.transform = "translateY(-90px)";
-    document.getElementsByTagName("header")[0].style.transform = "translateY(0px)";
-    setTimeout(function () { cookieBanner.remove() }, 2000);
-}
-
-// Assign an onclick event
-
-document.querySelector('.close-cookies').onclick = dismiss;
-
 
 //Show cookies banner
 
@@ -500,7 +486,18 @@ function loadCookies() {
 
     const cookieBanner = document.getElementById("cookie-banner");
     document.getElementsByTagName("header")[0].style.transform = "translateY(80px)";
+}
+// Assign an onclick event
+document.querySelector('.close-cookies').onclick = dismiss;
 
+
+// dismiss cookies banner
+function dismiss() {
+    const cookieBanner = document.getElementById("cookie-banner");
+
+    cookieBanner.style.transform = "translateY(-80px)";
+    document.getElementsByTagName("header")[0].style.transform = "translateY(0px)";
+    setTimeout(function () { cookieBanner.remove() }, 2000);
 }
 
 // show / hide overlay
