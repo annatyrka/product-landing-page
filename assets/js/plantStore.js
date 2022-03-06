@@ -1,8 +1,4 @@
-//import { PlantsProducts } from "./productsPlants";
-
-//variables
-
-
+// variables
 const cartBtn = document.querySelector('.cart-btn');
 const closeCartBtn = document.querySelector('.close-cart');
 const clearCartBtn = document.querySelector('.clear-cart');
@@ -15,17 +11,18 @@ const potsProductsDOM = document.querySelector('.pots-products-center');
 const outPotsProductsDOM = document.querySelector('.out-pots-products-center');
 const plantsProductsDOM =  document.querySelector('.plants-products-center');
 const outPlantsProductsDOM = document.querySelector('.out-plants-products-center');
+
 // cart 
 let cart = [];
 
 // buttons
-
 let buttonsDOM = [];
 //getting the pots
 
+
+// getting pots
 class Products{
 async getProducts() {
-
 
     try {
  let result = await fetch('products.json');
@@ -48,11 +45,9 @@ async getProducts() {
 }
 
 
-//getting the plants  
-
+// getting plants  
 class PlantsProducts {
 async getPlantsProducts() {
-
 
     try {
  let result = await fetch('productsPlants.json');
@@ -73,8 +68,6 @@ async getPlantsProducts() {
 }
 }
 }
-
-
 
 // display products
 class UI {
@@ -220,13 +213,8 @@ displayPlantsProducts(plantsProducts) {
         }
     });
 
-    
         plantsProductsDOM.innerHTML = result;
-
         outPlantsProductsDOM.innerHTML = resultOut;
-
-    
-    
 }
 
 
@@ -461,20 +449,13 @@ class Storage {
 
 }
 
-/*   
-
-  static getProduct(id) {
-        let products = JSON.parse(localStorage.getItem('products'));
-        return products.find(product => product.id === id)
-    }
-*/
-
 
 document.addEventListener("DOMContentLoaded",()=>{
 
-const ui = new UI();
 const products = new Products();
-const plantsProducts = new PlantsProducts();   // added
+const plantsProducts = new PlantsProducts();
+const ui = new UI();
+
 
 //setup app
 ui.setupAPP();
