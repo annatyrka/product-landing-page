@@ -178,7 +178,7 @@ displayPlantsProducts(plantsProducts) {
               <h4>${product.title}</h4>
               <p class="size">Size: ${product.size} cm </p>
               <p class="price">$${product.price}</p>
-              </p>
+              
               </div>
               <button class="bag-btn" data-id="${product.id}">
                 <img src="./assets/images/icons8-bag-48.png" />add
@@ -209,7 +209,6 @@ displayPlantsProducts(plantsProducts) {
               <h4>${product.title}</h4>
               <p class="size">Size: ${product.size} cm </p>
               <p class="price">$${product.price}</p>
-              </p>
               </div>
               <button class="bag-btn" data-id="${product.id}">
                 <img src="./assets/images/icons8-bag-48.png" />add
@@ -234,7 +233,6 @@ displayPlantsProducts(plantsProducts) {
 getBagButtons() {
     const buttons = [...document.querySelectorAll(".bag-btn")];
     console.log(buttons);
-
     buttonsDOM = buttons;
     buttons.forEach(button => {
 
@@ -515,7 +513,7 @@ document.querySelector('.close-cookies').onclick = dismiss;
 function loadCookies() {
 
     const cookieBanner = document.getElementById("cookie-banner");
-    document.getElementsByTagName("header")[0].style.transform = "translateY(90px)";
+    document.getElementsByTagName("header")[0].style.transform = "translateY(80px)";
 
 }
 
