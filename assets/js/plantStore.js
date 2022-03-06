@@ -461,16 +461,21 @@ const ui = new UI();
 ui.setupAPP();
 
 //get all product
-products.getProducts().then(products =>  {
-    ui.displayProducts(products)   //  displaying the pots
-Storage.saveProducts(products);     //uploading to local storage
-}).then(plantsProducts.getPlantsProducts().then(plantsProducts =>  {
+
+plantsProducts.getPlantsProducts()
+    .then(plantsProducts =>  {
     ui.displayPlantsProducts(plantsProducts)
-Storage.savePlantsProducts(plantsProducts); 
- })).then(() => {                     // to ensure the above happend before we can access the button
+    Storage.savePlantsProducts(plantsProducts);
+    })
+products.getProducts().
+    then(products =>  {
+    ui.displayProducts(products)   
+    Storage.saveProducts(products); 
+})
+.then(() => {                    
 ui.getBagButtons()}).then(() => { ui.cartLogic() }).then(() => {ui.bagIsEmpty()})
 })
-                           
+                 
 
 
 
