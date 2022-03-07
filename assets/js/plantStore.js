@@ -475,13 +475,9 @@ products.getProducts().
 .then(() => {                    
 ui.getBagButtons()}).then(() => { ui.cartLogic() }).then(() => {ui.bagIsEmpty()})
 })
-                 
-
-
-
+            
 
 //Show cookies banner
-
 function loadCookies() {
 
     const cookieBanner = document.getElementById("cookie-banner");
